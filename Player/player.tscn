@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Player/FPCamera.cs" id="2_4ntmi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
+radius = 0.45
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
+radius = 0.4
 
 [node name="Player" type="CharacterBody3D" unique_id=1575378184]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9682143, 0)
 script = ExtResource("1_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1401948077]
@@ -18,8 +19,8 @@ shape = SubResource("CapsuleShape3D_hvfyp")
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="Head" type="Node3D" parent="." unique_id=1103191098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43709219, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 script = ExtResource("2_4ntmi")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4450618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33350694)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://camm1f7jxq54k" path="res://icon.svg" id="1_s41d2"]
 [ext_resource type="PackedScene" uid="uid://cydmc2kou7s6j" path="res://Player/player.tscn" id="2_gtnvv"]
+[ext_resource type="PackedScene" uid="uid://c0k8fr36q4j85" path="res://Scenery/house.tscn" id="3_wav5q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtnvv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,16 +33,21 @@ size = Vector3(15, 1, 15)
 environment = SubResource("Environment_xto7t")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=371816091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2754917, -24.084862)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=502626386]
 shape = SubResource("BoxShape3D_54b6e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1071566542]
+transform = Transform3D(2.4518282, 0, 0, 0, 1, 0, 0, 0, 2.1462998, -1, 0, -3.5252304)
 mesh = SubResource("BoxMesh_s41d2")
 
 [node name="Player" parent="." unique_id=1575378184 instance=ExtResource("2_gtnvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.260694, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.091767, 1.9275382, 22.71395)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=357770781]
 transform = Transform3D(1, 0, 0, 0, 0.18628402, 0.98249596, 0, -0.98249596, 0.18628402, 0, 12.389185, 0.3181219)
 shadow_enabled = true
+
+[node name="House2" parent="." unique_id=1825464703 instance=ExtResource("3_wav5q")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 2.9338055, 26.709328)
