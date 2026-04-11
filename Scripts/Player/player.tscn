@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cydmc2kou7s6j"]
 
-[ext_resource type="Script" uid="uid://bqxlsmpb2rbik" path="res://Player/Player.cs" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Player/FPCamera.cs" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://bqxlsmpb2rbik" path="res://Scripts/Player/Player.cs" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Scripts/Player/FPCamera.cs" id="2_4ntmi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 radius = 0.45
@@ -19,8 +19,9 @@ shape = SubResource("CapsuleShape3D_hvfyp")
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="Head" type="Node3D" parent="." unique_id=1103191098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8921311, 0.18950999)
 script = ExtResource("2_4ntmi")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33350694)
+fov = 49.3

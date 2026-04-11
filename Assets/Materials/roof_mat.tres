@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bir6le3urrqpm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1qveq"]
+load_path = "res://.godot/imported/book_case_bookcase.jpg-c0e58c877a3d1111df367065a02c4afe.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_1qveq")

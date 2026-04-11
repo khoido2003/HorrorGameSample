@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://c0k8fr36q4j85"]
 
+[ext_resource type="Material" uid="uid://1xhc1drvws8e" path="res://Assets/Materials/house_mat.tres" id="1_4e22g"]
+[ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="2_kb0wk"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ec3x5"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ac3rl"]
@@ -367,6 +370,7 @@ data = PackedVector3Array(-0.79319996, -0.4989, -0.6008, -0.79319996, -0.5604999
 
 [node name="Cube_001" type="MeshInstance3D" parent="Visuals" unique_id=1310215512]
 transform = Transform3D(7.408515, 0, 0, 0, 6.0858684, 0, 0, 0, 5.8336196, 14.373851, 2.262345, 8.232849)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_nmnjn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_001" unique_id=445040156]
@@ -376,6 +380,7 @@ shape = SubResource("ConcavePolygonShape3D_kb0wk")
 
 [node name="Cube_002" type="MeshInstance3D" parent="Visuals" unique_id=793130163]
 transform = Transform3D(8.398896, 0, 0, 0, 6.27774, 0, 0, 0, 5.8336196, -0.99473596, 2.0891142, 8.232849)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_ypsub")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_002" unique_id=1869243139]
@@ -385,6 +390,7 @@ shape = SubResource("ConcavePolygonShape3D_74236")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Visuals" unique_id=1329890741]
 transform = Transform3D(5.2082872, 0.005587099, 0.014361868, -0.004890833, 6.02882, 0.016396102, -0.017090794, -0.022628069, 4.3719764, 17.060322, 1.6898873, -9.983347)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_uhg83")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_003" unique_id=1913102420]
@@ -394,6 +400,7 @@ shape = SubResource("ConcavePolygonShape3D_e5y1k")
 
 [node name="Cube_005" type="MeshInstance3D" parent="Visuals" unique_id=21729579]
 transform = Transform3D(23.693546, 0, 0, 0, 7.8272743, 0, 0, 0, 16.892582, -0.06312108, -15.499822, 0.001540184)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_8suii")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_005" unique_id=844662514]
@@ -403,6 +410,7 @@ shape = SubResource("ConcavePolygonShape3D_yxq5g")
 
 [node name="Cube_004" type="MeshInstance3D" parent="Visuals" unique_id=1738704428]
 transform = Transform3D(2.3448207, 0, 0, 0, 4.8518524, 0, 0, 0, 1, -16.76864, -15.3562765, -15.864074)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_q471u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_004" unique_id=459525539]
@@ -412,6 +420,7 @@ shape = SubResource("ConcavePolygonShape3D_of1ct")
 
 [node name="Cube_006" type="MeshInstance3D" parent="Visuals" unique_id=1454582825]
 transform = Transform3D(3.4131312, 0, 0, 0, 0.78035325, 0, 0, 0, 1, -16.57836, -5.665365, -17.947905)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_x4u84")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_006" unique_id=1158535101]
@@ -421,6 +430,7 @@ shape = SubResource("ConcavePolygonShape3D_tt3qb")
 
 [node name="Cube_007" type="MeshInstance3D" parent="Visuals" unique_id=1613092047]
 transform = Transform3D(3.4131312, 0, 0, 0, 0.73644084, 0, 0, 0, 1, -16.57836, -6.894499, -19.757502)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_78s1v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_007" unique_id=1717058645]
@@ -430,6 +440,7 @@ shape = SubResource("ConcavePolygonShape3D_uxhug")
 
 [node name="Cube_008" type="MeshInstance3D" parent="Visuals" unique_id=812064282]
 transform = Transform3D(27.915735, 0, 0, 0, 1, 0, 0, 0, 19.283554, 0, 8.757812, 0)
+material_override = ExtResource("2_kb0wk")
 mesh = SubResource("ArrayMesh_v85hy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube_008" unique_id=214441662]
@@ -439,7 +450,9 @@ shape = SubResource("ConcavePolygonShape3D_asryb")
 
 [node name="Cube" type="MeshInstance3D" parent="Visuals" unique_id=728505127]
 transform = Transform3D(23.693546, 0, 0, 0, 7.8272743, 0, 0, 0, 16.892582, 0, 0, 0)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("ArrayMesh_nfeio")
+surface_material_override/0 = ExtResource("1_4e22g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube" unique_id=1976224148]
 
@@ -449,6 +462,7 @@ shape = SubResource("ConcavePolygonShape3D_aicwh")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Visuals" unique_id=1480514365]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.969176, -18.923332, -3.836617)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D4" unique_id=1453685699]
@@ -458,6 +472,7 @@ shape = SubResource("BoxShape3D_haehx")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Visuals" unique_id=1341540207]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.796537, -14.121847, 0.77675104)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D6" unique_id=1721304557]
@@ -467,6 +482,7 @@ shape = SubResource("BoxShape3D_4e22g")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Visuals" unique_id=1264463599]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.738856, -10.286608, 4.521315)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D7" unique_id=1655323938]
@@ -476,6 +492,7 @@ shape = SubResource("BoxShape3D_kb0wk")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Visuals" unique_id=429843320]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.85849, -12.102295, 2.6565285)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D8" unique_id=1307666415]
@@ -485,6 +502,7 @@ shape = SubResource("BoxShape3D_74236")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Visuals" unique_id=994482802]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.855295, -11.151838, 3.6284065)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D9" unique_id=2098465207]
@@ -494,6 +512,7 @@ shape = SubResource("BoxShape3D_e5y1k")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Visuals" unique_id=1190120760]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.779857, -13.139406, 1.7099953)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D10" unique_id=1384977505]
@@ -503,6 +522,7 @@ shape = SubResource("BoxShape3D_yxq5g")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Visuals" unique_id=1941022688]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.622804, -9.342757, 5.5051746)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D12" unique_id=787154402]
@@ -512,6 +532,7 @@ shape = SubResource("BoxShape3D_of1ct")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Visuals" unique_id=1643016867]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.565123, -5.507518, 9.249739)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D13" unique_id=830112056]
@@ -521,6 +542,7 @@ shape = SubResource("BoxShape3D_tt3qb")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Visuals" unique_id=1235496924]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.684756, -7.323205, 7.384952)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D14" unique_id=1809396321]
@@ -530,6 +552,7 @@ shape = SubResource("BoxShape3D_uxhug")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Visuals" unique_id=1571421174]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.681561, -6.3727484, 8.356831)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D15" unique_id=287657014]
@@ -539,6 +562,7 @@ shape = SubResource("BoxShape3D_asryb")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Visuals" unique_id=409680617]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.606123, -8.360316, 6.438419)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D16" unique_id=1326968801]
@@ -548,6 +572,7 @@ shape = SubResource("BoxShape3D_aicwh")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Visuals" unique_id=1005322995]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.7377615, -10.309005, 4.636371)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D11" unique_id=230438491]
@@ -557,6 +582,7 @@ shape = SubResource("BoxShape3D_e5gp5")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Visuals" unique_id=1038291054]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.911495, -15.088095, -0.09205246)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D3" unique_id=509687700]
@@ -566,6 +592,7 @@ shape = SubResource("BoxShape3D_1qm4n")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals" unique_id=1278626750]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -15.031128, -16.903782, -1.9568398)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D2" unique_id=1584677158]
@@ -575,6 +602,7 @@ shape = SubResource("BoxShape3D_rcx4r")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Visuals" unique_id=1947877963]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -15.02794, -15.953325, -0.9849613)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D5" unique_id=627190734]
@@ -584,6 +612,7 @@ shape = SubResource("BoxShape3D_1n5mb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals" unique_id=1153652725]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.952495, -17.940893, -2.903373)
+material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/MeshInstance3D" unique_id=25339537]
@@ -599,10 +628,10 @@ omni_range = 17.367155
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.893534, -1.187871, 5.0507827)
 omni_range = 17.367155
 
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D2" unique_id=1543573525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45895, -3.0704093, 18.420135)
+[node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D2" unique_id=387290298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.271648, -15.822397, 8.829678)
 omni_range = 17.367155
 
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D2/OmniLight3D" unique_id=387290298]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.812698, -12.751987, -9.590458)
+[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D2" unique_id=1543573525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45895, -3.0704093, 18.420135)
 omni_range = 17.367155

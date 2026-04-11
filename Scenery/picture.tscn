@@ -1,0 +1,87 @@
+[gd_scene format=4 uid="uid://bai4ouen47ey5"]
+
+[ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="1_5g1pp"]
+[ext_resource type="Script" uid="uid://chyk3aejmc6fw" path="res://Scripts/GeneralScript.cs" id="2_h2m11"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggw11"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uv7dg"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABAACAAEABQADAAQABAABAAUABQAGAAMABgAAAAMAAAAHAAEABgAHAAAABwAIAAEACQAHAAYABwAJAAgABQAKAAYACQAGAAoACwAFAAEACwABAAgACwAKAAUADAAIAAkACgAMAAkADQALAAgACgALAA0ADAAOAAgADQAIAA4ACgAPAAwACgANAA8ADwAOAAwADwANAA4A"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pnPN6xMWAAAAAM3r6+kAAKZzzevr6QAApnMxFBMWAACmczEU6+kAAAAAMRTr6QAAAAAxFBMWAAAAAM3rExYAAAAA/////wAAAAD//wAAAAAAAAAAAAAAAAAAAAD//wAA/////wAAAAD//wAA//8AAP///////wAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j2f3t"]
+resource_name = "Picture_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f+m8/z//n/8/6bz/f/9f/z//nxYj/18WI/+f/z//X/9//5//P/9f/z//n/9//5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X///8pp6+v+f///ymoTFDGV6+v+f/7//X/+/DGWExf8f/3//X/8//1//f/8f/z//X/9//5//P/+f/3//X/8//1//v/+f/3//n/+//1//f/9f6Zz/n/9//1//f/+f6ZwVQ/8//1//f/9f/z8VQ/9/"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFwAWABUAFAAYABUAFwAZABYAFAAaABgAGQAXABsAGAAaABsAGQAbABoAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_ggw11"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("pnPN6xMWAAAAAM3r6+kAAKZzzevr6QAAAADN6xMWAACmczEU6+kAAAAAzevr6QAAAAAxFOvpAACmc83r6+kAAKZzMRQTFqoqpnPN6+vpqiqmczEU6+mqKqZzzesTFqoq/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAADN6+vpVNUAAP////9U1QAAzesTFlTVAAAxFOvpVNUAAP//AABU1QAAAAAAAFTVAAAxFBMWVNUAAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v///AAAAAFTV////////VNX/////AABU1f//AAD//1TVAAAAAAAA////////AAD//wAA//8AAP////8AAAAA//8AADEUExb/P6ZzzesTFv8/pnMxFBMW/z8AAM3rExb/PwAAMRTr6f8/pnMxFBMW/z+mczEU6+n/PwAAMRQTFv8//3//P/9//z//f/8//3//P/+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV/3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1QAA/38AAP9/AAD/fwAA/3+qKqoqqiqqKqoqqiqqKqoq/7//v/+//7//v/+//7//v/////////////////////////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uv7dg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27315"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b4arb"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAP//AAD//wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qx3ee"]
+resource_name = "Picture_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_27315"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///7///wAAAAD/v///AAD///+/AAAAAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b4arb")
+
+[node name="Picture" type="Node3D" unique_id=1579635059]
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=722293029 node_paths=PackedStringArray("plane")]
+transform = Transform3D(-0.10463357, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_5g1pp")
+mesh = SubResource("ArrayMesh_j2f3t")
+script = ExtResource("2_h2m11")
+plane = NodePath("../Plane")
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=1744648142]
+transform = Transform3D(-9.969959e-08, 0.9996944, 0, -0.8363408, -1.1917286e-07, 0, 0, 0, 0.8275367, 0.06726433, 0, 0)
+mesh = SubResource("ArrayMesh_qx3ee")
