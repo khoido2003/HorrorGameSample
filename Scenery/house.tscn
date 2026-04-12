@@ -619,19 +619,3 @@ mesh = SubResource("BoxMesh_haehx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/MeshInstance3D/StaticBody3D" unique_id=722930258]
 shape = SubResource("BoxShape3D_luip8")
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=995011276]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.677418, 2.375742, -8.091364)
-omni_range = 17.367155
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D2" unique_id=145273152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.893534, -1.187871, 5.0507827)
-omni_range = 17.367155
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D2" unique_id=387290298]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.271648, -15.822397, 8.829678)
-omni_range = 17.367155
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D2" unique_id=1543573525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45895, -3.0704093, 18.420135)
-omni_range = 17.367155

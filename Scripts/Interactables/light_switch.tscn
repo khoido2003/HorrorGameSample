@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://unuyksigm7l1"]
+
+[ext_resource type="Script" uid="uid://bkbymsby5k37" path="res://Scripts/Interactables/LightSwitch.cs" id="1_pgd1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5okmw"]
+albedo_color = Color(0.88853115, 0.760443, 0.19246912, 1)
+emission_enabled = true
+emission = Color(2.7604024, 2.416199, 0.510785, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g3ed"]
+albedo_color = Color(0.82176524, 0.8314305, 0.8306426, 1)
+emission = Color(2.7604024, 2.416199, 0.510785, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymns4"]
+albedo_color = Color(0.4272516, 0.40596282, 0.38465655, 1)
+metallic = 0.54
+metallic_specular = 0.73
+
+[sub_resource type="BoxMesh" id="BoxMesh_ymns4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgd1d"]
+albedo_color = Color(0.6670703, 0, 0.28128463, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ymns4"]
+size = Vector3(0.8754883, 1, 0.5560303)
+
+[node name="LightSwitch" type="Node3D" unique_id=1850646854 node_paths=PackedStringArray("onSwitch", "offSwitch")]
+script = ExtResource("1_pgd1d")
+onMaterial3D = SubResource("StandardMaterial3D_5okmw")
+offMaterial3D = SubResource("StandardMaterial3D_1g3ed")
+onSwitch = NodePath("On")
+offSwitch = NodePath("Off")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1676421052]
+transform = Transform3D(0.7059829, 0, 0, 0, 1, 0, 0, 0, 0.27255633, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ymns4")
+mesh = SubResource("BoxMesh_ymns4")
+
+[node name="On" type="MeshInstance3D" parent="." unique_id=418930025]
+transform = Transform3D(0.25256222, 0, 0, 0, 0.19446906, 0.21522945, 0, -0.12388569, 0.3378556, 0, 0.14962149, 0.2130906)
+mesh = SubResource("BoxMesh_ymns4")
+surface_material_override/0 = SubResource("StandardMaterial3D_pgd1d")
+
+[node name="Off" type="MeshInstance3D" parent="." unique_id=840683249]
+transform = Transform3D(0.25256222, 0, 0, 0, 0.16927296, -0.1547367, 0, 0.07686399, 0.3407673, 0, -0.017796755, 0.2130906)
+mesh = SubResource("BoxMesh_ymns4")
+surface_material_override/0 = SubResource("StandardMaterial3D_pgd1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1237002549]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=61303396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06225586, 0, 0.04046631)
+shape = SubResource("BoxShape3D_ymns4")
