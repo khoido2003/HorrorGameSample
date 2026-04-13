@@ -6,9 +6,20 @@ public partial class Player : CharacterBody3D
     public const float Speed = 5.0f;
     public const float JumpVelocity = 4.5f;
 
+    [Export]
+    private SpotLight3D flashlight;
+
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
+    }
+
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("flashlight"))
+        {
+            flashlight.Visible = !flashlight.Visible;
+        }
     }
 
     public override void _PhysicsProcess(double delta)

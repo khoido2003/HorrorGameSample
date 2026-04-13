@@ -1,7 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://1xhc1drvws8e"]
 
-[ext_resource type="Texture2D" uid="uid://bdl1ftajgfm40" path="res://Assets/Materials/texture_wood..png" id="1_hdy4o"]
+[ext_resource type="Texture2D" uid="uid://biihx18bolvv4" path="res://Assets/Materials/low_wooden_wall.jpg" id="1_bpk4p"]
 
 [resource]
-albedo_color = Color(0.6053157, 0.5716229, 0.5635222, 1)
-albedo_texture = ExtResource("1_hdy4o")
+albedo_color = Color(0.73039293, 0.73392296, 0.7031392, 1)
+albedo_texture = ExtResource("1_bpk4p")
+roughness = 0.7

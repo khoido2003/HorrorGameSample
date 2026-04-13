@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bpoge3i4gg18t"]
+
+[ext_resource type="Texture2D" uid="uid://p5rdplr1gg7" path="res://Assets/cross.png" id="1_c8xti"]
+
+[node name="player_ui" type="Control" unique_id=1009638154]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2084361922]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=2112153516]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0051953, 0.9956315)
+
+[node name="crosshair" type="TextureRect" parent="CanvasLayer/CenterContainer" unique_id=1995364156]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("1_c8xti")
+expand_mode = 1

@@ -23,7 +23,7 @@ public partial class Door : Node, IInteractable
         }
         else
         {
-            animationPlayer.Play("DoorClose");
+            animationPlayer.PlayBackwards("DoorOpen");
             isOpen = false;
         }
     }

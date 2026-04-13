@@ -3,16 +3,28 @@ using Godot;
 
 public partial class PlayerInteract : RayCast3D
 {
+    [Export]
+    private TextureRect crosshair;
+
     public override void _PhysicsProcess(double delta)
     {
         if (IsColliding())
         {
             var interactable = FindInteractable(GetCollider() as Node);
 
+            if (interactable != null && !crosshair.Visible)
+            {
+                crosshair.Visible = true;
+            }
+
             if (interactable != null && Input.IsActionJustPressed("interact"))
             {
                 interactable.Interact();
             }
+        }
+        else
+        {
+            crosshair.Visible = false;
         }
     }
 

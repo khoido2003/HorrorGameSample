@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://bqxlsmpb2rbik" path="res://Scripts/Player/Player.cs" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Scripts/Player/FPCamera.cs" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://dtkc3xhw5jpmi" path="res://Scripts/Player/PlayerInteract.cs" id="3_ejydr"]
+[ext_resource type="Texture2D" uid="uid://p5rdplr1gg7" path="res://Assets/cross.png" id="4_ea7v2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
-radius = 0.4
+height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s4r2"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1575378184]
+[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("flashlight")]
 script = ExtResource("1_l8h54")
+flashlight = NodePath("Head/FlashLight")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=990076928]
 mesh = SubResource("CapsuleMesh_l8h54")
@@ -22,10 +24,40 @@ shape = SubResource("CapsuleShape3D_0s4r2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0.103)
 script = ExtResource("2_4ntmi")
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
-transform = Transform3D(1, 0, 0, 0, 0.98596984, -0.16692363, 0, 0.16692363, 0.98596984, 0, -0.029004097, -0.39941728)
+[node name="FlashLight" type="SpotLight3D" parent="Head" unique_id=1436872266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14535594, 0.36283946, -0.10299976)
+spot_range = 22.0
+spot_angle = 27.66055
 
-[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1559137965]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
+transform = Transform3D(1, 0, 0, 0, 0.98596984, -0.16692363, 0, 0.16692363, 0.98596984, 0, 0, -0.42989653)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1559137965 node_paths=PackedStringArray("crosshair")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.012124658, -0.457663)
 target_position = Vector3(0, -1.5, 0)
 script = ExtResource("3_ejydr")
+crosshair = NodePath("../../Control/CanvasLayer/CenterContainer/crosshair")
+
+[node name="Control" type="Control" parent="." unique_id=1210912606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=812744672]
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CanvasLayer" unique_id=1021011509]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0051953, 0.9956315)
+
+[node name="crosshair" type="TextureRect" parent="Control/CanvasLayer/CenterContainer" unique_id=1240555578]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_ea7v2")
+expand_mode = 1
