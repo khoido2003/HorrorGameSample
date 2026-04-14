@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cgcrxpu8wnd7l" path="res://Scenery/computer_keyboard_2.tscn" id="29_gaktt"]
 [ext_resource type="PackedScene" uid="uid://c2kewmju4xbo5" path="res://Scripts/Interactables/door_bell.tscn" id="30_3fdi5"]
 [ext_resource type="PackedScene" uid="uid://y7x3vtbpa1ol" path="res://Scenery/blood.tscn" id="31_papoo"]
+[ext_resource type="PackedScene" uid="uid://cgbett5wfv5u4" path="res://UI/pause_ui.tscn" id="32_vawf4"]
 
 [sub_resource type="Gradient" id="Gradient_3kmy4"]
 colors = PackedColorArray(0.052610785, 0.051721916, 0.03468595, 1, 1, 1, 1, 1)
@@ -204,6 +205,10 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 [node name="computer_keyboard2" parent="Furnitures" unique_id=841284737 instance=ExtResource("29_gaktt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.4456897, 2.164177, 19.039623)
 
+[node name="Decal" parent="Furnitures" unique_id=1372699977 instance=ExtResource("31_papoo")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.9456141, -10.052336, 20.017544)
+size = Vector3(3.818512, 1.7972412, 4.6905518)
+
 [node name="LightBulbs" type="Node3D" parent="." unique_id=1499360456]
 
 [node name="LightBulb" parent="LightBulbs" unique_id=196982426 instance=ExtResource("18_lybtp")]
@@ -257,6 +262,4 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.979474, 3.5918508, 14.671661)
 door = NodePath("../Furnitures/door3")
 
-[node name="Decal" parent="." unique_id=1372699977 instance=ExtResource("31_papoo")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.9456141, -10.052336, 20.017544)
-size = Vector3(3.818512, 1.7972412, 4.6905518)
+[node name="CanvasLayer" parent="." unique_id=1862138323 instance=ExtResource("32_vawf4")]

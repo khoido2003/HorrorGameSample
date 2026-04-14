@@ -3,8 +3,8 @@ using Godot;
 
 public partial class Player : CharacterBody3D
 {
-    public const float Speed = 5.0f;
-    public const float JumpVelocity = 4.5f;
+    private float speed = 5f;
+    private const float JumpVelocity = 4.5f;
 
     private bool isCrouch = false;
 
@@ -29,6 +29,15 @@ public partial class Player : CharacterBody3D
         if (Input.IsActionJustPressed("crouch"))
         {
             isCrouch = !isCrouch;
+
+            if (isCrouch)
+            {
+                speed = 2.5f;
+            }
+            else
+            {
+                speed = 5f;
+            }
         }
     }
 
@@ -67,13 +76,13 @@ public partial class Player : CharacterBody3D
         Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
         if (direction != Vector3.Zero)
         {
-            velocity.X = direction.X * Speed;
-            velocity.Z = direction.Z * Speed;
+            velocity.X = direction.X * speed;
+            velocity.Z = direction.Z * speed;
         }
         else
         {
-            velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-            velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
+            velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
+            velocity.Z = Mathf.MoveToward(Velocity.Z, 0, speed);
         }
 
         Velocity = velocity;

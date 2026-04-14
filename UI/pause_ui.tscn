@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cgbett5wfv5u4"]
+
+[ext_resource type="Script" uid="uid://wdi866gvra8f" path="res://UI/PauseUi.cs" id="1_ydefs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4ir7"]
+bg_color = Color(0.13587752, 0.4226509, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydefs"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7d37g"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1862138323 node_paths=PackedStringArray("_resumeButton", "_quitButton", "_menuButton", "_settingsButton", "_controlsButton")]
+script = ExtResource("1_ydefs")
+_resumeButton = NodePath("Control/CenterContainer/Panel/VBoxContainer/resume")
+_quitButton = NodePath("Control/CenterContainer/Panel/VBoxContainer/quick")
+_menuButton = NodePath("Control/CenterContainer/Panel/VBoxContainer/menu")
+_settingsButton = NodePath("Control/CenterContainer/Panel/VBoxContainer/settings")
+_controlsButton = NodePath("Control/CenterContainer/Panel/VBoxContainer/controls")
+
+[node name="Control" type="Control" parent="." unique_id=1056255727]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=36446631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1183588193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/CenterContainer" unique_id=1566547302]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/Panel" unique_id=312047593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=1185302032]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="resume" type="Button" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=2041995184]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4ir7")
+text = "Resume"
+
+[node name="settings" type="Button" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=1421119593]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ydefs")
+text = "Settings
+"
+
+[node name="controls" type="Button" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=2122120920]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_7d37g")
+text = "Controls"
+
+[node name="menu" type="Button" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=1081469130]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_7d37g")
+text = "Back To Menu"
+
+[node name="quick" type="Button" parent="Control/CenterContainer/Panel/VBoxContainer" unique_id=412239397]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_7d37g")
+text = "Quick Game"
