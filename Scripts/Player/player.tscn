@@ -10,8 +10,9 @@ height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s4r2"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("flashlight")]
+[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlight")]
 script = ExtResource("1_l8h54")
+collision = NodePath("CollisionShape3D")
 flashlight = NodePath("Head/FlashLight")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=990076928]
@@ -30,7 +31,7 @@ spot_range = 22.0
 spot_angle = 27.66055
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
-transform = Transform3D(1, 0, 0, 0, 0.98596984, -0.16692363, 0, 0.16692363, 0.98596984, 0, 0, -0.42989653)
+transform = Transform3D(1, 0, 0, 0, 0.9979055, -0.06468907, 0, 0.06468907, 0.9979055, 0, -0.09521222, -0.18111847)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1559137965 node_paths=PackedStringArray("crosshair")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.012124658, -0.457663)

@@ -6,6 +6,11 @@ public partial class Player : CharacterBody3D
     public const float Speed = 5.0f;
     public const float JumpVelocity = 4.5f;
 
+    private bool isCrouch = false;
+
+    [Export]
+    private CollisionShape3D collision;
+
     [Export]
     private SpotLight3D flashlight;
 
@@ -19,6 +24,11 @@ public partial class Player : CharacterBody3D
         if (Input.IsActionJustPressed("flashlight"))
         {
             flashlight.Visible = !flashlight.Visible;
+        }
+
+        if (Input.IsActionJustPressed("crouch"))
+        {
+            isCrouch = !isCrouch;
         }
     }
 
@@ -36,6 +46,19 @@ public partial class Player : CharacterBody3D
         if (Input.IsActionJustPressed("jump") && IsOnFloor())
         {
             velocity.Y = JumpVelocity;
+        }
+
+        // Handle Crouch
+        if (collision.Shape is CapsuleShape3D capsule)
+        {
+            if (isCrouch)
+            {
+                capsule.Height = Mathf.Lerp(capsule.Height, 0.25f, 5f * (float)delta);
+            }
+            else
+            {
+                capsule.Height = Mathf.Lerp(capsule.Height, 1.8f, 5f * (float)delta);
+            }
         }
 
         // Get the input direction and handle the movement/deceleration.

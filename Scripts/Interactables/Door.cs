@@ -8,6 +8,8 @@ public partial class Door : Node, IInteractable
 
     private bool isOpen = false;
 
+    private bool isLocked = false;
+
     public void Interact()
     {
         GD.Print("Toggle Door now");
@@ -16,7 +18,7 @@ public partial class Door : Node, IInteractable
 
     private void ToggleDoor()
     {
-        if (!isOpen)
+        if (!isOpen && !isLocked)
         {
             animationPlayer.Play("DoorOpen");
             isOpen = true;
@@ -26,5 +28,15 @@ public partial class Door : Node, IInteractable
             animationPlayer.PlayBackwards("DoorOpen");
             isOpen = false;
         }
+    }
+
+    public void SetIsLocked(bool v)
+    {
+        isLocked = v;
+    }
+
+    public bool GetIsLocked()
+    {
+        return isLocked;
     }
 }

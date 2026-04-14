@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://idy6pia3shiu" path="res://Scenery/desk_2_alt_32.tscn" id="11_ugh17"]
 [ext_resource type="PackedScene" uid="uid://eux73oqi3kak" path="res://Scenery/tv_2.tscn" id="12_eabcg"]
 [ext_resource type="PackedScene" uid="uid://bai4ouen47ey5" path="res://Scenery/picture.tscn" id="13_dvejp"]
-[ext_resource type="PackedScene" uid="uid://c3xbiwlqxb8tn" path="res://Scenery/closet.tscn" id="14_3hgmi"]
+[ext_resource type="PackedScene" uid="uid://c3xbiwlqxb8tn" path="res://Scripts/Interactables/closet.tscn" id="14_3hgmi"]
 [ext_resource type="PackedScene" uid="uid://8xuwabgs3dpt" path="res://Scenery/water_cooler_2.tscn" id="15_xsqsu"]
 [ext_resource type="PackedScene" uid="uid://be2ehfvyvup5h" path="res://Scenery/bed.tscn" id="16_vmy0u"]
 [ext_resource type="PackedScene" uid="uid://cgbcwpey5snh2" path="res://Scripts/Interactables/door.tscn" id="17_jjxhf"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://dwjrnse6b8qc0" path="res://Scenery/electric_box.tscn" id="26_o8jhj"]
 [ext_resource type="PackedScene" uid="uid://dt7dus4co844o" path="res://Scripts/Interactables/drawer.tscn" id="28_3kmy4"]
 [ext_resource type="PackedScene" uid="uid://cgcrxpu8wnd7l" path="res://Scenery/computer_keyboard_2.tscn" id="29_gaktt"]
+[ext_resource type="PackedScene" uid="uid://c2kewmju4xbo5" path="res://Scripts/Interactables/door_bell.tscn" id="30_3fdi5"]
+[ext_resource type="PackedScene" uid="uid://y7x3vtbpa1ol" path="res://Scenery/blood.tscn" id="31_papoo"]
 
 [sub_resource type="Gradient" id="Gradient_3kmy4"]
 colors = PackedColorArray(0.052610785, 0.051721916, 0.03468595, 1, 1, 1, 1, 1)
@@ -104,7 +106,7 @@ mesh = SubResource("BoxMesh_s41d2")
 shape = SubResource("ConcavePolygonShape3D_nflnv")
 
 [node name="Player" parent="." unique_id=1575378184 instance=ExtResource("2_gtnvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.091767, 1.6856606, 22.71395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.091767, 1.6856606, 24.717587)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=357770781]
 transform = Transform3D(1, 0, 0, 0, 0.18628402, 0.98249596, 0, -0.98249596, 0.18628402, 0, 12.389185, 0.3181219)
@@ -250,3 +252,11 @@ offMat = SubResource("StandardMaterial3D_jmcc3")
 
 [node name="Drawer" parent="LightSwitchs" unique_id=386902367 instance=ExtResource("28_3kmy4")]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 4.1377354, 1.2773721, 27.331982)
+
+[node name="DoorBell" parent="." unique_id=156973853 node_paths=PackedStringArray("door") instance=ExtResource("30_3fdi5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.979474, 3.5918508, 14.671661)
+door = NodePath("../Furnitures/door3")
+
+[node name="Decal" parent="." unique_id=1372699977 instance=ExtResource("31_papoo")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.9456141, -10.052336, 20.017544)
+size = Vector3(3.818512, 1.7972412, 4.6905518)
