@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ds4mkuppogg6y"]
+
+[ext_resource type="Script" uid="uid://fvj41qx5fhca" path="res://Scripts/Task/TaskTrigger.cs" id="1_0tnom"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5271v"]
+
+[node name="Area3D" type="Area3D" unique_id=1704954837]
+script = ExtResource("1_0tnom")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175924883]
+shape = SubResource("BoxShape3D_5271v")

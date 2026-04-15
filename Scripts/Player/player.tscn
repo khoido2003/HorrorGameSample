@@ -22,7 +22,7 @@ mesh = SubResource("CapsuleMesh_l8h54")
 shape = SubResource("CapsuleShape3D_0s4r2")
 
 [node name="Head" type="Node3D" parent="." unique_id=1103191098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0.103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3668027, -0.117380515)
 script = ExtResource("2_4ntmi")
 
 [node name="FlashLight" type="SpotLight3D" parent="Head" unique_id=1436872266]

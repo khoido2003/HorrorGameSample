@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b0bpshytysla2"]
+
+[ext_resource type="Script" uid="uid://bsbx5gsu7bfx4" path="res://UI/SafeUi.cs" id="1_7urih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r06rm"]
+bg_color = Color(0.117064886, 0.3841844, 0.27852356, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7urih"]
+bg_color = Color(0.32847938, 0.332519, 0.30815598, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=824532698 node_paths=PackedStringArray("passwordInput", "backButton")]
+script = ExtResource("1_7urih")
+passwordInput = NodePath("LineEdit")
+backButton = NodePath("Back")
+
+[node name="Bg" type="ColorRect" parent="." unique_id=1508737943]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.827451)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1653988122]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 383.0
+offset_top = 226.0
+offset_right = -321.0
+offset_bottom = -282.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=987367293]
+offset_left = 398.0
+offset_top = 239.0
+offset_right = 819.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 40
+placeholder_text = "XXXX"
+alignment = 1
+max_length = 4
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="Confirm" type="Button" parent="." unique_id=708152206]
+offset_left = 441.0
+offset_top = 411.0
+offset_right = 760.0
+offset_bottom = 491.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_r06rm")
+text = "Confirm"
+
+[node name="Back" type="Button" parent="." unique_id=86211976]
+offset_left = 439.0
+offset_top = 514.0
+offset_right = 758.0
+offset_bottom = 594.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7urih")
+text = "Back
+"

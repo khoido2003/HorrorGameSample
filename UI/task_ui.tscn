@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dvpk3diwy172h"]
+
+[ext_resource type="Script" uid="uid://db15bgrr2nckq" path="res://UI/TaskUI.cs" id="1_86fjw"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2003581527 node_paths=PackedStringArray("taskText")]
+script = ExtResource("1_86fjw")
+taskText = NodePath("Body")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1561177012]
+offset_right = 73.0
+offset_bottom = 45.0
+text = "Task:"
+
+[node name="Body" type="RichTextLabel" parent="." unique_id=1344603320]
+offset_top = 33.0
+offset_right = 196.0
+offset_bottom = 127.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Sample text for task"

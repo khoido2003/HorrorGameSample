@@ -6,6 +6,9 @@ public partial class PlayerInteract : RayCast3D
     [Export]
     private TextureRect crosshair;
 
+    [Export]
+    private SafeUi safeUi;
+
     public override void _PhysicsProcess(double delta)
     {
         if (IsColliding())

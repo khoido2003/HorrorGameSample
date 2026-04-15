@@ -32,6 +32,10 @@
 [ext_resource type="PackedScene" uid="uid://c2kewmju4xbo5" path="res://Scripts/Interactables/door_bell.tscn" id="30_3fdi5"]
 [ext_resource type="PackedScene" uid="uid://y7x3vtbpa1ol" path="res://Scenery/blood.tscn" id="31_papoo"]
 [ext_resource type="PackedScene" uid="uid://cgbett5wfv5u4" path="res://UI/pause_ui.tscn" id="32_vawf4"]
+[ext_resource type="PackedScene" uid="uid://b0bpshytysla2" path="res://UI/safe_ui.tscn" id="33_4j6tw"]
+[ext_resource type="PackedScene" uid="uid://dvpk3diwy172h" path="res://UI/task_ui.tscn" id="33_pf7nj"]
+[ext_resource type="PackedScene" uid="uid://ds4mkuppogg6y" path="res://Scripts/Task/task_trigger.tscn" id="34_tse5p"]
+[ext_resource type="PackedScene" uid="uid://dcatjon4bb5dp" path="res://Scripts/Interactables/safe.tscn" id="35_t2rts"]
 
 [sub_resource type="Gradient" id="Gradient_3kmy4"]
 colors = PackedColorArray(0.052610785, 0.051721916, 0.03468595, 1, 1, 1, 1, 1)
@@ -262,4 +266,22 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.979474, 3.5918508, 14.671661)
 door = NodePath("../Furnitures/door3")
 
-[node name="CanvasLayer" parent="." unique_id=1862138323 instance=ExtResource("32_vawf4")]
+[node name="Pause_UI" parent="." unique_id=1862138323 instance=ExtResource("32_vawf4")]
+
+[node name="task_UI" parent="." unique_id=2003581527 instance=ExtResource("33_pf7nj")]
+
+[node name="Safe" parent="." unique_id=1497986916 instance=ExtResource("33_4j6tw")]
+
+[node name="safe" parent="." unique_id=1047189031 node_paths=PackedStringArray("safeUi") instance=ExtResource("35_t2rts")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.203793, -8.756664, 19.130146)
+safeUi = NodePath("../Safe")
+
+[node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI") instance=ExtResource("34_tse5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.286091, 0.73974204, 20.409266)
+taskUI = NodePath("../task_UI")
+taskText = "Find Your Money"
+
+[node name="Trigger_2" parent="." unique_id=1962356279 node_paths=PackedStringArray("taskUI") instance=ExtResource("34_tse5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.975479, -9.720587, 21.650015)
+taskUI = NodePath("../task_UI")
+taskText = "Collect The Money and Leave"
