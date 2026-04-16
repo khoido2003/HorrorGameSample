@@ -5,4 +5,3 @@
 [resource]
 albedo_color = Color(0.73039293, 0.73392296, 0.7031392, 1)
 albedo_texture = ExtResource("1_bpk4p")
-roughness = 0.7

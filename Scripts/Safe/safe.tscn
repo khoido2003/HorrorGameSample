@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dcatjon4bb5dp"]
 
-[ext_resource type="Script" uid="uid://cms6gs2gcx8kj" path="res://Scripts/Interactables/Safe.cs" id="1_ljgky"]
+[ext_resource type="Script" uid="uid://cms6gs2gcx8kj" path="res://Scripts/Safe/Safe.cs" id="1_ljgky"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwy0b"]
 resource_name = "Material"

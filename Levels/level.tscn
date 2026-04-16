@@ -32,10 +32,11 @@
 [ext_resource type="PackedScene" uid="uid://c2kewmju4xbo5" path="res://Scripts/Interactables/door_bell.tscn" id="30_3fdi5"]
 [ext_resource type="PackedScene" uid="uid://y7x3vtbpa1ol" path="res://Scenery/blood.tscn" id="31_papoo"]
 [ext_resource type="PackedScene" uid="uid://cgbett5wfv5u4" path="res://UI/pause_ui.tscn" id="32_vawf4"]
-[ext_resource type="PackedScene" uid="uid://b0bpshytysla2" path="res://UI/safe_ui.tscn" id="33_4j6tw"]
+[ext_resource type="PackedScene" uid="uid://b0bpshytysla2" path="res://Scripts/Safe/safe_ui.tscn" id="33_4j6tw"]
 [ext_resource type="PackedScene" uid="uid://dvpk3diwy172h" path="res://UI/task_ui.tscn" id="33_pf7nj"]
 [ext_resource type="PackedScene" uid="uid://ds4mkuppogg6y" path="res://Scripts/Task/task_trigger.tscn" id="34_tse5p"]
-[ext_resource type="PackedScene" uid="uid://dcatjon4bb5dp" path="res://Scripts/Interactables/safe.tscn" id="35_t2rts"]
+[ext_resource type="PackedScene" uid="uid://dcatjon4bb5dp" path="res://Scripts/Safe/safe.tscn" id="35_t2rts"]
+[ext_resource type="PackedScene" uid="uid://e8gpjhkqfb7f" path="res://Scenery/code_paper.tscn" id="37_deov6"]
 
 [sub_resource type="Gradient" id="Gradient_3kmy4"]
 colors = PackedColorArray(0.052610785, 0.051721916, 0.03468595, 1, 1, 1, 1, 1)
@@ -259,12 +260,12 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.2666895, 2.9203022, 
 isOn = true
 offMat = SubResource("StandardMaterial3D_jmcc3")
 
-[node name="Drawer" parent="LightSwitchs" unique_id=386902367 instance=ExtResource("28_3kmy4")]
-transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 4.1377354, 1.2773721, 27.331982)
-
 [node name="DoorBell" parent="." unique_id=156973853 node_paths=PackedStringArray("door") instance=ExtResource("30_3fdi5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.979474, 3.5918508, 14.671661)
 door = NodePath("../Furnitures/door3")
+
+[node name="Drawer" parent="." unique_id=386902367 instance=ExtResource("28_3kmy4")]
+transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 4.1377354, 1.2773721, 27.331982)
 
 [node name="SafeUI" parent="." unique_id=1497986916 instance=ExtResource("33_4j6tw")]
 
@@ -273,9 +274,10 @@ door = NodePath("../Furnitures/door3")
 [node name="PauseUI" parent="." unique_id=1862138323 node_paths=PackedStringArray("safeUi") instance=ExtResource("32_vawf4")]
 safeUi = NodePath("../SafeUI")
 
-[node name="safe" parent="." unique_id=1047189031 node_paths=PackedStringArray("safeUi") instance=ExtResource("35_t2rts")]
+[node name="safe" parent="." unique_id=1047189031 node_paths=PackedStringArray("safeUi", "safeCodePaper") instance=ExtResource("35_t2rts")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.203793, -8.756664, 19.130146)
 safeUi = NodePath("../SafeUI")
+safeCodePaper = NodePath("../code_paper")
 
 [node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI") instance=ExtResource("34_tse5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.286091, 0.73974204, 20.409266)
@@ -286,3 +288,10 @@ taskText = "Find Your Money"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.975479, -9.720587, 21.650015)
 taskUI = NodePath("../task_UI")
 taskText = "Collect The Money and Leave"
+
+[node name="code_paper" parent="." unique_id=2054025636 node_paths=PackedStringArray("spawnPosList") instance=ExtResource("37_deov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1799479, 2.322738, 27.469435)
+spawnPosList = [NodePath("../code_spawn2")]
+
+[node name="code_spawn2" type="Node3D" parent="." unique_id=449593761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1085875, 1.750393, 27.044903)

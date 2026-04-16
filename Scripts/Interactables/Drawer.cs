@@ -6,6 +6,9 @@ public partial class Drawer : Node3D, IInteractable
     [Export]
     private AnimationPlayer animationPlayer;
 
+    [Export]
+    public Node3D MovingPart;
+
     private bool isOpen = false;
 
     public void Interact()
