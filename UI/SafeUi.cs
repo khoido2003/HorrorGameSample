@@ -4,9 +4,6 @@ using Godot;
 public partial class SafeUi : CanvasLayer
 {
     [Export]
-    private AnimationPlayer animationPlayer;
-
-    [Export]
     private LineEdit passwordInput;
 
     [Export]
@@ -15,21 +12,44 @@ public partial class SafeUi : CanvasLayer
     [Export]
     private Button confirmButton;
 
+    private string currentPassword;
+
+    public bool IsOpen => Visible;
+
     public override void _Ready()
     {
         ProcessMode = ProcessModeEnum.Always;
         Visible = false;
 
         backButton.Pressed += OnBackPressed;
+        confirmButton.Pressed += OnConfirmPressed;
     }
 
-    public void OpenSafePassword()
+    private void OnConfirmPressed()
     {
+        if (passwordInput.Text == currentPassword)
+        {
+            GD.Print("Correct password!");
+            ExitSafe();
+
+            // TODO: open safe animation, give loot, etc.
+        }
+        else
+        {
+            GD.Print("Wrong password!");
+            passwordInput.Text = "";
+        }
+    }
+
+    public void OpenSafePassword(string password)
+    {
+        currentPassword = password;
         Visible = true;
 
         Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = true;
 
+        passwordInput.Text = "";
         passwordInput.GrabFocus();
     }
 

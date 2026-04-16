@@ -193,8 +193,9 @@ _data = {
 &"open": SubResource("Animation_ljgky")
 }
 
-[node name="safe" type="Node3D" unique_id=1047189031]
+[node name="safe" type="Node3D" unique_id=1047189031 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_ljgky")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1272291404]
 transform = Transform3D(1.9410543, 0, 0, 0, 1.8236579, 0, 0, 0, 1.7747877, 0, 0, 0)

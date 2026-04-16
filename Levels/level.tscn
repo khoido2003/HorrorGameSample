@@ -266,15 +266,16 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.979474, 3.5918508, 14.671661)
 door = NodePath("../Furnitures/door3")
 
-[node name="Pause_UI" parent="." unique_id=1862138323 instance=ExtResource("32_vawf4")]
+[node name="SafeUI" parent="." unique_id=1497986916 instance=ExtResource("33_4j6tw")]
 
 [node name="task_UI" parent="." unique_id=2003581527 instance=ExtResource("33_pf7nj")]
 
-[node name="Safe" parent="." unique_id=1497986916 instance=ExtResource("33_4j6tw")]
+[node name="PauseUI" parent="." unique_id=1862138323 node_paths=PackedStringArray("safeUi") instance=ExtResource("32_vawf4")]
+safeUi = NodePath("../SafeUI")
 
 [node name="safe" parent="." unique_id=1047189031 node_paths=PackedStringArray("safeUi") instance=ExtResource("35_t2rts")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.203793, -8.756664, 19.130146)
-safeUi = NodePath("../Safe")
+safeUi = NodePath("../SafeUI")
 
 [node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI") instance=ExtResource("34_tse5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.286091, 0.73974204, 20.409266)

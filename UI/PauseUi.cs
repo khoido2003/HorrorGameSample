@@ -4,6 +4,9 @@ using Godot;
 public partial class PauseUi : CanvasLayer
 {
     [Export]
+    private SafeUi safeUi;
+
+    [Export]
     private Button _resumeButton;
 
     [Export]
@@ -33,6 +36,9 @@ public partial class PauseUi : CanvasLayer
 
     public override void _Process(double delta)
     {
+        if (safeUi.IsOpen)
+            return;
+
         if (Input.IsActionJustPressed("pause"))
         {
             TogglePause();
