@@ -457,7 +457,7 @@ surface_material_override/0 = ExtResource("1_4e22g")
 [node name="StaticBody3D" type="StaticBody3D" parent="Visuals/Cube" unique_id=1976224148]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/Cube/StaticBody3D" unique_id=1470546060]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.0013393315, -0.028676609, -0.00030096277)
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, -0.0013393315, -0.028676612, -0.0003009628)
 shape = SubResource("ConcavePolygonShape3D_aicwh")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Visuals" unique_id=1480514365]

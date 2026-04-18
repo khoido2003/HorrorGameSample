@@ -2,44 +2,71 @@
 
 [ext_resource type="Script" uid="uid://bqxlsmpb2rbik" path="res://Scripts/Player/Player.cs" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Scripts/Player/FPCamera.cs" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://dodi427ffu63p" path="res://Scripts/Player/PlayerZoom.cs" id="2_e535i"]
+[ext_resource type="Script" uid="uid://bvbdrdjya7lnf" path="res://Scripts/Player/PlayerFlashlight.cs" id="2_h56sh"]
 [ext_resource type="Script" uid="uid://dtkc3xhw5jpmi" path="res://Scripts/Player/PlayerInteract.cs" id="3_ejydr"]
 [ext_resource type="Texture2D" uid="uid://p5rdplr1gg7" path="res://Assets/cross.png" id="4_ea7v2"]
+[ext_resource type="Script" uid="uid://bk5wrjyyssv0k" path="res://Scripts/Player/PlayerVisualHolder.cs" id="6_vkoq3"]
+[ext_resource type="Script" uid="uid://uqodcyxl4h6u" path="res://Scripts/Player/PlayerInventory.cs" id="7_w735d"]
+[ext_resource type="PackedScene" uid="uid://biqd0qpwdww11" path="res://Scripts/UI/inventory_HUD.tscn" id="9_tffgb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
-height = 3.0
+radius = 1.0
+height = 4.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s4r2"]
+radius = 0.5996094
+height = 3.1259766
 
-[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlight")]
+[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlightController", "inventory", "visualHolder")]
 script = ExtResource("1_l8h54")
 collision = NodePath("CollisionShape3D")
-flashlight = NodePath("Head/FlashLight")
+flashlightController = NodePath("FlashLight")
+inventory = NodePath("Inventory")
+visualHolder = NodePath("PlayerVisualHolder")
+
+[node name="FlashLight" type="SpotLight3D" parent="." unique_id=1436872266 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14535594, 2.5736067, -0.57285815)
+spot_range = 22.0
+spot_angle = 27.66055
+script = ExtResource("2_h56sh")
+target = NodePath("../Head")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=990076928]
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1036658161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7285141, 0)
 shape = SubResource("CapsuleShape3D_0s4r2")
 
+[node name="PlayerZoom" type="Node3D" parent="." unique_id=1724466585 node_paths=PackedStringArray("camera")]
+script = ExtResource("2_e535i")
+camera = NodePath("../Head/Camera3D")
+
 [node name="Head" type="Node3D" parent="." unique_id=1103191098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3668027, -0.117380515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9976761, -0.80974275)
 script = ExtResource("2_4ntmi")
 
-[node name="FlashLight" type="SpotLight3D" parent="Head" unique_id=1436872266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14535594, 0.36283946, -0.10299976)
-spot_range = 22.0
-spot_angle = 27.66055
-
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
-transform = Transform3D(1, 0, 0, 0, 0.9979055, -0.06468907, 0, 0.06468907, 0.9979055, 0, -0.09521222, -0.18111847)
 
-[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1559137965 node_paths=PackedStringArray("crosshair")]
+[node name="PlayerInteract" type="RayCast3D" parent="Head" unique_id=1559137965 node_paths=PackedStringArray("crosshair", "player")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.012124658, -0.457663)
-target_position = Vector3(0, -1.5, 0)
+target_position = Vector3(0, -4.055, 0)
 script = ExtResource("3_ejydr")
-crosshair = NodePath("../../Control/CanvasLayer/CenterContainer/crosshair")
+crosshair = NodePath("../../InteractUI/CanvasLayer/CenterContainer/crosshair")
+player = NodePath("../..")
 
-[node name="Control" type="Control" parent="." unique_id=1210912606]
+[node name="PlayerVisualHolder" type="Node3D" parent="." unique_id=575146936 node_paths=PackedStringArray("rightHand")]
+script = ExtResource("6_vkoq3")
+rightHand = NodePath("RightHand")
+
+[node name="RightHand" type="Node3D" parent="PlayerVisualHolder" unique_id=1010921642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7617922, 1.1777482, -1.3893816)
+
+[node name="Inventory" type="Node3D" parent="." unique_id=249377572]
+script = ExtResource("7_w735d")
+
+[node name="InteractUI" type="Control" parent="." unique_id=1210912606]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,9 +74,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=812744672]
+[node name="CanvasLayer" type="CanvasLayer" parent="InteractUI" unique_id=812744672]
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/CanvasLayer" unique_id=1021011509]
+[node name="CenterContainer" type="CenterContainer" parent="InteractUI/CanvasLayer" unique_id=1021011509]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -57,8 +84,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0051953, 0.9956315)
 
-[node name="crosshair" type="TextureRect" parent="Control/CanvasLayer/CenterContainer" unique_id=1240555578]
+[node name="crosshair" type="TextureRect" parent="InteractUI/CanvasLayer/CenterContainer" unique_id=1240555578]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_ea7v2")
 expand_mode = 1
+
+[node name="inventory_HUD" parent="." unique_id=742023706 node_paths=PackedStringArray("inventory") instance=ExtResource("9_tffgb")]
+inventory = NodePath("../Inventory")

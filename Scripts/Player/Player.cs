@@ -12,20 +12,33 @@ public partial class Player : CharacterBody3D
     private CollisionShape3D collision;
 
     [Export]
-    private SpotLight3D flashlight;
+    private PlayerFlashlight flashlightController;
+
+    [Export]
+    private PlayerInventory inventory;
+
+    [Export]
+    private PlayerVisualHolder visualHolder;
+
+    public PlayerVisualHolder VisualHolder
+    {
+        get { return visualHolder; }
+    }
+
+    public PlayerInventory PlayerInventory
+    {
+        get { return inventory; }
+    }
 
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
+
+        visualHolder.Init(inventory);
     }
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("flashlight"))
-        {
-            flashlight.Visible = !flashlight.Visible;
-        }
-
         if (Input.IsActionJustPressed("crouch"))
         {
             isCrouch = !isCrouch;

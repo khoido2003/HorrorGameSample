@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dahpi2uhbh4e1"]
+
+[ext_resource type="Script" uid="uid://cplicb0t0tr8q" path="res://Scripts/ItemPickup/ItemPickup.cs" id="1_edorw"]
+[ext_resource type="Resource" uid="uid://cnuvrns6un42r" path="res://Scripts/ItemResources/key_basement.tres" id="2_wvxvi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvxvi"]
+
+[node name="ItemPickup" type="Area3D" unique_id=333500642]
+script = ExtResource("1_edorw")
+item = ExtResource("2_wvxvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813529737]
+shape = SubResource("BoxShape3D_wvxvi")

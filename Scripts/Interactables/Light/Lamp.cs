@@ -27,7 +27,7 @@ public partial class Lamp : Node3D, IInteractable
         SetLightOnOff();
     }
 
-    public void Interact()
+    public void Interact(Player player)
     {
         GD.Print("Lamp interact");
         ToggleLight();

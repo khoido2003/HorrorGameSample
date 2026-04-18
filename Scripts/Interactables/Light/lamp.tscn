@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0qhjaginwaj8"]
 
 [ext_resource type="Texture2D" uid="uid://cfln4lrs7bi4m" path="res://Assets/Materials/wood.jpg" id="1_nxqf0"]
-[ext_resource type="Script" uid="uid://dba3ovnyksulu" path="res://Scripts/Interactables/Lamp.cs" id="1_rchxs"]
+[ext_resource type="Script" uid="uid://dba3ovnyksulu" path="res://Scripts/Interactables/Light/Lamp.cs" id="1_rchxs"]
 [ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="2_7j8kv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw46i"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2kewmju4xbo5"]
 
-[ext_resource type="Script" uid="uid://dkshncb5dc157" path="res://Scripts/Interactables/DoorBell.cs" id="1_vo26o"]
+[ext_resource type="Script" uid="uid://dkshncb5dc157" path="res://Scripts/Interactables/DoorBell/DoorBell.cs" id="1_vo26o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r3xx7"]
 

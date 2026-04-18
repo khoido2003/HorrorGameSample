@@ -9,6 +9,9 @@ public partial class PlayerInteract : RayCast3D
     [Export]
     private SafeUi safeUi;
 
+    [Export]
+    private Player player;
+
     public override void _PhysicsProcess(double delta)
     {
         if (IsColliding())
@@ -22,7 +25,7 @@ public partial class PlayerInteract : RayCast3D
 
             if (interactable != null && Input.IsActionJustPressed("interact"))
             {
-                interactable.Interact();
+                interactable.Interact(player);
             }
         }
         else
@@ -36,7 +39,9 @@ public partial class PlayerInteract : RayCast3D
         while (node != null)
         {
             if (node is IInteractable interactable)
+            {
                 return interactable;
+            }
 
             node = node.GetParent();
         }

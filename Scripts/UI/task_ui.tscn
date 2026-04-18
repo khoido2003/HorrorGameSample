@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvpk3diwy172h"]
 
-[ext_resource type="Script" uid="uid://db15bgrr2nckq" path="res://UI/TaskUI.cs" id="1_86fjw"]
+[ext_resource type="Script" uid="uid://db15bgrr2nckq" path="res://Scripts/UI/TaskUI.cs" id="1_86fjw"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=2003581527 node_paths=PackedStringArray("taskText")]
 script = ExtResource("1_86fjw")

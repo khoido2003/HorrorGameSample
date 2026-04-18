@@ -31,7 +31,7 @@ public partial class Safe : Node3D, IInteractable
         safeCodePaper.SetPassword(password);
     }
 
-    public void Interact()
+    public void Interact(Player player)
     {
         safeUi.OpenSafePassword(password);
     }

@@ -11,7 +11,7 @@ public partial class Drawer : Node3D, IInteractable
 
     private bool isOpen = false;
 
-    public void Interact()
+    public void Interact(Player player)
     {
         GD.Print("Interact");
         ToggleDrawer();

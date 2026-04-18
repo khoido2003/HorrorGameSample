@@ -21,7 +21,7 @@ public partial class LightSwitch : Node3D, IInteractable
     [Export]
     private Node3D lightBulb;
 
-    public void Interact()
+    public void Interact(Player player)
     {
         ToggleLight();
     }

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b4gwtweyqv3tb"]
+
+[ext_resource type="Script" uid="uid://bf7vnlxb2xe4g" path="res://Scripts/UI/InventorySlot.cs" id="1_rl0aq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl0aq"]
+bg_color = Color(0.7294118, 0.7294118, 0.7294118, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qimyg"]
+bg_color = Color(0, 0.46666667, 0.29411766, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb8jj"]
+bg_color = Color(0.6, 0.6, 0.6, 0.21568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gi18"]
+bg_color = Color(0.18431373, 0.4862745, 0.24313726, 0.58431375)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b861b"]
+bg_color = Color(0.6, 0.6, 0.6, 0.2)
+
+[node name="inventorySlot" type="Panel" unique_id=1473613833 node_paths=PackedStringArray("icon", "amount", "border")]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rl0aq")
+icon = NodePath("Icon")
+amount = NodePath("Amount")
+border = NodePath("Border")
+normalStyle = SubResource("StyleBoxFlat_rl0aq")
+selectedStyle = SubResource("StyleBoxFlat_qimyg")
+borderNormal = SubResource("StyleBoxFlat_eb8jj")
+borderSelected = SubResource("StyleBoxFlat_5gi18")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=39288975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+
+[node name="Amount" type="Label" parent="." unique_id=1595798050]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 128
+
+[node name="Border" type="Panel" parent="." unique_id=1833569610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b861b")

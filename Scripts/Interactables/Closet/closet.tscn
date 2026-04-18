@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c3xbiwlqxb8tn"]
 
-[ext_resource type="Script" uid="uid://sk6rb56xbyf1" path="res://Scripts/Interactables/Closet.cs" id="1_kn0q2"]
+[ext_resource type="Script" uid="uid://sk6rb56xbyf1" path="res://Scripts/Interactables/Closet/Closet.cs" id="1_kn0q2"]
 [ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="1_odjwc"]
 [ext_resource type="Material" uid="uid://1xhc1drvws8e" path="res://Assets/Materials/house_mat.tres" id="2_i6ube"]
 

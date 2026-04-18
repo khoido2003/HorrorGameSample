@@ -11,7 +11,7 @@ public partial class Closet : Node3D, IInteractable
 
     private bool isOpen = false;
 
-    public void Interact()
+    public void Interact(Player player)
     {
         ToggleDoor();
     }

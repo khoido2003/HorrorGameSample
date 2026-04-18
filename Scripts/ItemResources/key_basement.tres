@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="KeyItem" format=3 uid="uid://cnuvrns6un42r"]
+
+[ext_resource type="Script" uid="uid://32uc0pfcfaro" path="res://Scripts/ItemResources/Key/KeyItem.cs" id="1_82f34"]
+[ext_resource type="PackedScene" uid="uid://c08w17xuif3ds" path="res://Scripts/ItemResources/Key/key.tscn" id="1_lje0r"]
+[ext_resource type="Texture2D" uid="uid://bvqbufso7lvop" path="res://Assets/Models/desk1_desk_1.jpg" id="2_luarr"]
+
+[resource]
+script = ExtResource("1_82f34")
+lockId = 1
+Id = 1
+DisplayName = "Key Basement"
+WorldScene = ExtResource("1_lje0r")
+HandScene = ExtResource("1_lje0r")
+Icon = ExtResource("2_luarr")
+metadata/_custom_type_script = "uid://32uc0pfcfaro"

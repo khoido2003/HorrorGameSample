@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://biqd0qpwdww11"]
+
+[ext_resource type="Script" uid="uid://bd3bo53bcf0u3" path="res://Scripts/UI/InventoryHUD.cs" id="1_lp8uv"]
+[ext_resource type="PackedScene" uid="uid://b4gwtweyqv3tb" path="res://Scripts/UI/inventory_slot.tscn" id="2_ujjpe"]
+
+[node name="inventory_HUD" type="CanvasLayer" unique_id=742023706 node_paths=PackedStringArray("slotContainer", "heldLabel")]
+script = ExtResource("1_lp8uv")
+slotContainer = NodePath("Control/VBoxContainer/SlotContainer")
+heldLabel = NodePath("Control/VBoxContainer/HeldLabel")
+slotScene = ExtResource("2_ujjpe")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1103789304]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09019608, 0.09019608, 0.09019608, 0.7254902)
+
+[node name="Control" type="Control" parent="." unique_id=99428047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=752793823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SlotContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=88656055]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HeldLabel" type="Label" parent="Control/VBoxContainer" unique_id=359705839]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "_
+"
+horizontal_alignment = 1
