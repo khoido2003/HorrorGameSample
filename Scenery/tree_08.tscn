@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b5buejquyk1ib"]
+
+[ext_resource type="PackedScene" uid="uid://deyk6a6uiejgw" path="res://Assets/Models/tree08.fbx" id="1_adrxc"]
+[ext_resource type="Material" uid="uid://xwspnkud3ukm" path="res://Assets/Materials/Green.tres" id="2_rfuqe"]
+
+[node name="tree08" unique_id=1279784054 instance=ExtResource("1_adrxc")]
+
+[node name="tree08" parent="." index="0" unique_id=709683335]
+material_override = ExtResource("2_rfuqe")

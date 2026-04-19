@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cyvxqfsfi85q5"]
+
+[ext_resource type="Material" uid="uid://b8wpajjdwkqnm" path="res://Assets/Materials/metal.tres" id="1_awjqc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4jqbi"]
+cap_top = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_awjqc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_awjqc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_awjqc"]
+height = 1.0632324
+radius = 0.54785156
+
+[node name="Bin" type="Node3D" unique_id=827117482]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1537558959]
+transform = Transform3D(1, 0, 0, 0, 0.48973, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("1_awjqc")
+mesh = SubResource("CylinderMesh_4jqbi")
+
+[node name="Lid" type="Node3D" parent="." unique_id=1349263214]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lid" unique_id=213656922]
+transform = Transform3D(1.1, 0, 0, 0, -0.09174577, -9.6165046e-08, 0, 8.02067e-09, -1.0999999, 0, 0.45034647, 0)
+material_override = ExtResource("1_awjqc")
+mesh = SubResource("CylinderMesh_4jqbi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lid" unique_id=2123383303]
+transform = Transform3D(0.60080415, 0, 0, 0, 0.051142156, 0, 0, 0, 0.6265483, 0, 0.616806, 0)
+material_override = ExtResource("1_awjqc")
+mesh = SubResource("CylinderMesh_awjqc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lid" unique_id=103589585]
+transform = Transform3D(0.1075393, 0, 0, 0, 0.09752562, 0, 0, 0, 0.16143844, 0, 0.45027375, -0.61363304)
+material_override = ExtResource("1_awjqc")
+mesh = SubResource("BoxMesh_awjqc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lid" unique_id=241740958]
+transform = Transform3D(0.1075393, 0, 0, 0, 0.09752562, 0, 0, 0, 0.16143844, 0, 0.45027375, 0.5963735)
+material_override = ExtResource("1_awjqc")
+mesh = SubResource("BoxMesh_awjqc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1813252116]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1944637247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.055786133, 0)
+shape = SubResource("CylinderShape3D_awjqc")

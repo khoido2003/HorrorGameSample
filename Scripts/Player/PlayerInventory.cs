@@ -17,7 +17,9 @@ public partial class PlayerInventory : Node
     public void AddItem(ItemResource item, int amount = 1)
     {
         if (item == null)
+        {
             return;
+        }
 
         int existing = items.FindIndex(e => e.resource.Id == item.Id);
         if (existing >= 0)

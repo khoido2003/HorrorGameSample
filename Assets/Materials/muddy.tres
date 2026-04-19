@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://db2eqtxtoe4ja"]
+
+[ext_resource type="Texture2D" uid="uid://bbja1sl4iwukv" path="res://Assets/Materials/muddy_tracks_diff_4k.jpg" id="1_web2n"]
+
+[resource]
+albedo_texture = ExtResource("1_web2n")
+normal_enabled = true
+uv1_scale = Vector3(0.5, 0.5, 0.5)

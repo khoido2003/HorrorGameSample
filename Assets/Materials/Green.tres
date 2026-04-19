@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xwspnkud3ukm"]
+
+[ext_resource type="Texture2D" uid="uid://b4dnxp8f5r28v" path="res://Assets/Materials/rocky_terrain_02_diff_4k.jpg" id="1_sbx1u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sbx1u"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sbx1u"]
+noise = SubResource("FastNoiseLite_sbx1u")
+seamless = true
+as_normal_map = true
+
+[resource]
+albedo_color = Color(0.67563856, 0.6828049, 0.67563546, 1)
+albedo_texture = ExtResource("1_sbx1u")
+normal_enabled = true
+normal_scale = -16.0
+normal_texture = SubResource("NoiseTexture2D_sbx1u")

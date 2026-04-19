@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ck3rtam0r8e8j"]
+
+[ext_resource type="PackedScene" uid="uid://cydmc2kou7s6j" path="res://Scripts/Player/player.tscn" id="1_1uylv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1uylv"]
+
+[node name="GameIntro" type="Node3D" unique_id=1383010242]
+
+[node name="Player" parent="." unique_id=1575378184 instance=ExtResource("1_1uylv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3254213, 2.974856, 0)
+
+[node name="Road" type="MeshInstance3D" parent="." unique_id=1850953386]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 100, -3.3355613, 0, 0)
+mesh = SubResource("BoxMesh_1uylv")

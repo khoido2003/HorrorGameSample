@@ -5,9 +5,9 @@
 [ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="2_7j8kv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw46i"]
-albedo_color = Color(0.6885581, 0.646566, 0.42700878, 1)
+albedo_color = Color(0.5624522, 0.48541814, 0.102412455, 1)
 emission_enabled = true
-emission = Color(1.6594129, 0.94136804, 0, 1)
+emission = Color(1.6593475, 1.4171946, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rchxs"]
 albedo_color = Color(0.63920635, 0.63920635, 0.6392063, 1)
@@ -73,4 +73,4 @@ mesh = SubResource("CylinderMesh_nxqf0")
 shape = SubResource("ConcavePolygonShape3D_fw46i")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1501569052]
-omni_range = 7.191342
+omni_range = 14.382
