@@ -43,8 +43,43 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c2ac5")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h5so7"]
+points = PackedVector3Array(0.5617163, 2.9022324, -0.7435756, -1.1493049, -1.2623951, -0.9269336, -1.0516887, -1.4317311, -1.4619572, 1.1843165, -2.9352055, -0.5247174, 0.9095321, 0.7059906, -2.0878978, -1.0804354, 2.2767136, -0.0105249565, -1.1584257, 2.9213057, -1.305402, 1.1120917, 2.2756956, -0.010993457, -1.0747919, -1.6435874, -0.015717663, -0.8814343, -1.982518, -2.0946362, 0.9025528, -1.9534762, -2.0794477, 1.3796309, 1.4565663, -1.5981588, -1.1584257, -2.9352055, -0.426912, 1.106997, -1.643007, -0.016088424, 1.0865302, 2.9213057, -1.305402, -0.7844652, 0.79389805, -2.0859025, -0.077470936, -2.7928503, -1.2007004, -0.9986427, 2.8513443, -0.4621, 1.3796309, 1.4565663, -1.305402, 1.0296983, 2.8513443, -0.4621, -1.0107182, -2.8977952, -0.9216026, 1.0407245, -2.8978026, -0.92160225, -0.9699649, 0.8895091, -2.003291, 0.19520365, 0.8831853, -2.0858958, -0.90729594, -2.129213, -2.0304887, 1.1843165, 2.8234525, -1.305402, 1.1843165, -2.8379638, -0.426912, 0.9149718, -2.072267, -2.0044866, -1.1669159, 2.358579, -0.9249776, -0.7411136, -3.029482, -0.5421438, 0.5492641, 2.8297815, -0.3966399, -1.049836, -0.18468158, -1.6392922)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h5so7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2oib"]
+albedo_color = Color(0.63324845, 0.56919265, 0.12825665, 1)
+emission_enabled = true
+emission = Color(2.0237975, 1.8953508, 0.22556882, 1)
+
 [node name="Car2" type="Node3D" unique_id=655726779]
 
 [node name="Car" type="MeshInstance3D" parent="." unique_id=51091223]
 transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, -0.99999994, 0, 0.99999994, -3.5762787e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_xkymj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Car" unique_id=1870464048]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car/StaticBody3D" unique_id=313442559]
+shape = SubResource("ConvexPolygonShape3D_h5so7")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Car" unique_id=2123506866]
+transform = Transform3D(1, 0, 0, 0, 0.05857456, -0.9982831, 0, 0.9982831, 0.05857456, -1.0357533, 2.755995, -0.8529927)
+light_energy = 14.53
+spot_range = 25.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Car" unique_id=194331697]
+transform = Transform3D(1, 0, 0, 0, 0.05857456, -0.9982831, 0, 0.9982831, 0.05857456, 0.9179804, 2.755995, -0.94594866)
+light_energy = 14.53
+spot_range = 25.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=331893429]
+transform = Transform3D(0.25680763, 0, 0, 0, 0.31450188, 0, 0, 0, 0.28356725, -0.83524466, 0.87766314, 2.8653398)
+mesh = SubResource("SphereMesh_h5so7")
+surface_material_override/0 = SubResource("StandardMaterial3D_x2oib")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1351465440]
+transform = Transform3D(0.25680763, 0, 0, 0, 0.31450188, 0, 0, 0, 0.28356725, 0.86248827, 0.87766314, 2.850398)
+mesh = SubResource("SphereMesh_h5so7")
+surface_material_override/0 = SubResource("StandardMaterial3D_x2oib")

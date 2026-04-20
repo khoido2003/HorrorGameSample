@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ei8e8hif1ur8"]
+
+[ext_resource type="Material" uid="uid://b8wpajjdwkqnm" path="res://Assets/Materials/metal.tres" id="1_bgmxo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_btjk5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bgmxo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_btjk5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btjk5"]
+albedo_color = Color(0.72294486, 0.6911165, 0.29145655, 1)
+emission_enabled = true
+emission = Color(1.8184046, 1.7598672, 0.7730946, 1)
+
+[node name="StreetLight" type="Node3D" unique_id=2059928609]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1332870444]
+transform = Transform3D(0.29026598, 0, 0, 0, 3.6305363, 0, 0, 0, 0.355253, 0, 2.2281127, 0)
+material_override = ExtResource("1_bgmxo")
+mesh = SubResource("CylinderMesh_btjk5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=866279921]
+transform = Transform3D(1.6334175, 0, 0, 0, 0.52931964, 0, 0, 0, 1.4479421, 0, -1.794189, 0)
+material_override = ExtResource("1_bgmxo")
+mesh = SubResource("CylinderMesh_bgmxo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=44187832]
+transform = Transform3D(3.2573988, -0.05242189, 0, 0.60536987, 0.28207383, 0, 0, 0, 0.8154028, 1.2177646, 6.0716867, 0)
+material_override = ExtResource("1_bgmxo")
+mesh = SubResource("BoxMesh_btjk5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1972944159]
+transform = Transform3D(2.334878, -0.023933187, 0, 0.43392438, 0.12878068, 0, 0, 0, 0.5594581, 1.4106648, 5.9245043, 0)
+mesh = SubResource("BoxMesh_btjk5")
+surface_material_override/0 = SubResource("StandardMaterial3D_btjk5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1049237215]
+transform = Transform3D(0.16761002, 0.68051314, -0.71330833, 0.25946257, 0.6675857, 0.69786, 0.9510974, -0.30204517, -0.06467366, 1.8620045, 6.050245, -0.40764523)
+light_energy = 3.083
+spot_range = 20.0

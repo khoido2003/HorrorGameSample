@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d16it3edlkxob"]
+
+[ext_resource type="Script" uid="uid://d3avy1rfbjw1e" path="res://Scripts/Transition.cs" id="1_2rhw1"]
+
+[node name="Control" type="CanvasLayer" unique_id=694927648 node_paths=PackedStringArray("fadeRect")]
+script = ExtResource("1_2rhw1")
+fadeRect = NodePath("FadeRect")
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=224101740]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13725491, 0.13725491, 0.13725491, 0)
