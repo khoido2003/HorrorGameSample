@@ -67,9 +67,13 @@ _data = {
 &"RESET": SubResource("Animation_6u4om")
 }
 
-[node name="Door" type="Node3D" unique_id=530189763 node_paths=PackedStringArray("animationPlayer")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ou62y"]
+size = Vector3(1.1182251, 2.0161133, 2.326149)
+
+[node name="Door" type="Node3D" unique_id=530189763 node_paths=PackedStringArray("animationPlayer", "AITrigger")]
 script = ExtResource("1_6u4om")
 animationPlayer = NodePath("AnimationPlayer")
+AITrigger = NodePath("AITrigger")
 
 [node name="Hinge" type="Node3D" parent="." unique_id=1999224483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7237097, 0, 0)
@@ -106,3 +110,9 @@ shape = SubResource("ConcavePolygonShape3D_qhxk6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=615926785]
 libraries/ = SubResource("AnimationLibrary_6u4om")
+
+[node name="AITrigger" type="Area3D" parent="." unique_id=483599418]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AITrigger" unique_id=1097670525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044525146, -0.0031738281, -0.034488678)
+shape = SubResource("BoxShape3D_ou62y")
