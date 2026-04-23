@@ -47,6 +47,9 @@ _data = {
 &"RESET": SubResource("Animation_dcck4")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6yci"]
+size = Vector3(6.360756, 2.0161133, 7.6428165)
+
 [node name="LockBasementDoor" type="Node3D" unique_id=2145122880 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_m3n2o")
 animationPlayer = NodePath("AnimationPlayer")
@@ -73,3 +76,9 @@ mesh = SubResource("BoxMesh_m3n2o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=656632708]
 libraries/ = SubResource("AnimationLibrary_su2j8")
+
+[node name="AITrigger" type="Area3D" parent="." unique_id=953171612]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AITrigger" unique_id=1972795121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14101791, -0.0031738281, -0.23529148)
+shape = SubResource("BoxShape3D_m6yci")

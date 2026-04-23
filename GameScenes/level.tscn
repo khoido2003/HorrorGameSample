@@ -400,7 +400,7 @@ transform = Transform3D(0.21593842, 0, 1.4843755, 0, 1.5, 0, -1.4843755, 0, 0.21
 transform = Transform3D(-0.10442784, 0, -1.9972719, 0, 2, 0, 1.9972719, 0, -0.10442784, 13.122915, -6.4956183, 25.491581)
 
 [node name="Fridge" parent="NavigationRegion3D/Furnitures" unique_id=1896542449 instance=ExtResource("28_8nq73")]
-transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0.19144446, 2.5571725, 27.26422)
+transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0.19144446, 2.5571725, 27.73858)
 
 [node name="computer_keyboard2" parent="NavigationRegion3D/Furnitures" unique_id=841284737 instance=ExtResource("29_tcr73")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.4456897, 2.164177, 19.039623)
@@ -481,15 +481,17 @@ offMat = SubResource("StandardMaterial3D_jmcc3")
 [node name="PauseUI" parent="." unique_id=1862138323 node_paths=PackedStringArray("safeUi") instance=ExtResource("39_4pkij")]
 safeUi = NodePath("../SafeUI")
 
-[node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI") instance=ExtResource("41_ucgf6")]
+[node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.286091, 0.73974204, 20.409266)
 taskUI = NodePath("../task_UI")
 taskText = "Find Your Money"
+enemy = NodePath("../Enemy")
 
-[node name="Trigger_2" parent="." unique_id=1962356279 node_paths=PackedStringArray("taskUI") instance=ExtResource("41_ucgf6")]
+[node name="Trigger_2" parent="." unique_id=1962356279 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.975479, -9.720587, 21.650015)
 taskUI = NodePath("../task_UI")
 taskText = "Collect The Money and Leave"
+enemy = NodePath("../Enemy")
 
 [node name="code_paper" parent="." unique_id=2054025636 node_paths=PackedStringArray("spawnPosList") instance=ExtResource("42_clpe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1799479, 2.322738, 27.469435)
@@ -505,18 +507,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.19121, 0.50699115, 31.550
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.272541, 0.99919677, 19.557247)
 
 [node name="Destination" parent="." unique_id=1531353295 instance=ExtResource("46_wqee0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1113849, 1.4012107, 34.737328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.058505, 0.7981905, 17.986103)
 
 [node name="Destination2" parent="." unique_id=1742169683 instance=ExtResource("46_wqee0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.309227, 0.8082707, 24.762356)
 
 [node name="Destination3" parent="." unique_id=142721037 instance=ExtResource("46_wqee0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.705195, 1.6458418, 31.353127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.172186, 0.74666524, 26.549622)
 
 [node name="Destination4" parent="." unique_id=1274105991 instance=ExtResource("46_wqee0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6046152, 1.6458418, 33.87187)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3970714, 1.1773844, 27.10982)
 
-[node name="Enemy" parent="." unique_id=1322371223 node_paths=PackedStringArray("PatrolDestination", "player") instance=ExtResource("45_xtl4i")]
+[node name="Enemy" parent="." unique_id=1322371223 node_paths=PackedStringArray("PatrolDestination") instance=ExtResource("45_xtl4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3656609, 2.3194673, 22.780973)
-PatrolDestination = [NodePath("../Destination"), NodePath("../Destination2"), NodePath("../Destination3"), NodePath("../Destination4")]
-player = NodePath("../Player")
+PatrolDestination = [NodePath("../Destination"), NodePath("../Destination4"), NodePath("../Destination2"), NodePath("../Destination3")]

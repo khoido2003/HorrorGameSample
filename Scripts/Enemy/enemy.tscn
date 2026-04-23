@@ -15,9 +15,10 @@ albedo_color = Color(0.9870499, 0, 0.3450364, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_brvl6"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1322371223 node_paths=PackedStringArray("navigationAgent3D")]
+[node name="Enemy" type="CharacterBody3D" unique_id=1322371223 node_paths=PackedStringArray("navigationAgent3D", "rayCastList")]
 script = ExtResource("1_brvl6")
 navigationAgent3D = NodePath("NavigationAgent3D")
+rayCastList = [NodePath("ChaseCast2"), NodePath("ChaseCast4"), NodePath("ChaseCast5")]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=643536808]
 path_desired_distance = 2.0
@@ -35,3 +36,23 @@ surface_material_override/0 = SubResource("StandardMaterial3D_brvl6")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1560459363]
 transform = Transform3D(1, 0, 0, 0, 0.26223934, 0, 0, 0, 1, 0, 1.0620836, -0.5763699)
 mesh = SubResource("BoxMesh_brvl6")
+
+[node name="ChaseCast" type="RayCast3D" parent="." unique_id=1952450007]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0.68778795, -0.92632306)
+target_position = Vector3(0, -10, 0)
+
+[node name="ChaseCast2" type="RayCast3D" parent="." unique_id=1865864397]
+transform = Transform3D(0.7586007, -0.65155566, 2.8480398e-08, -2.379865e-16, -4.3711378e-08, -0.9999999, 0.6515557, 0.7586006, -3.3159488e-08, 0, 0.68778795, -0.92632306)
+target_position = Vector3(0, -10, 0)
+
+[node name="ChaseCast3" type="RayCast3D" parent="." unique_id=1872370735]
+transform = Transform3D(0.74448633, 0.6676377, -2.9183369e-08, 2.379865e-16, -4.3711385e-08, -1, -0.6676377, 0.7444863, -3.254253e-08, 0, 0.68778795, -0.92632306)
+target_position = Vector3(0, -10, 0)
+
+[node name="ChaseCast4" type="RayCast3D" parent="." unique_id=346708401]
+transform = Transform3D(0.9350856, 0.35442162, -1.5492263e-08, 2.379866e-16, -4.3711385e-08, -1, -0.35442165, 0.9350856, -4.087389e-08, 0, 0.68778795, -0.92632306)
+target_position = Vector3(0, -10, 0)
+
+[node name="ChaseCast5" type="RayCast3D" parent="." unique_id=946572391]
+transform = Transform3D(0.95096475, -0.30929917, 1.3519891e-08, 2.379866e-16, -4.3711385e-08, -1, 0.30929917, 0.95096475, -4.1567986e-08, 0, 0.68778795, -0.92632306)
+target_position = Vector3(0, -10, 0)

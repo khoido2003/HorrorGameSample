@@ -334,6 +334,12 @@ shadow_mesh = SubResource("ArrayMesh_ia25x")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aicwh"]
 data = PackedVector3Array(-0.79319996, -0.4989, -0.6008, -0.79319996, -0.56049997, -1, -0.79319996, -0.56049997, -0.6008, -0.79319996, -0.4989, -0.8231, -0.79319996, -0.56049997, -1, -0.79319996, -0.4989, -0.6008, -0.79319996, -0.56049997, -1, -0.79319996, -0.4989, -0.8231, -0.79319996, 0.4714, -0.8231, -0.79319996, -0.56049997, -1, -0.79319996, 0.4714, -0.8231, -0.79319996, 0.4714, -1, -0.606, -0.56049997, -0.6008, -0.79319996, -0.4989, -0.6008, -0.79319996, -0.56049997, -0.6008, -0.606, -0.56049997, -0.6008, -0.606, -0.4989, -0.6008, -0.79319996, -0.4989, -0.6008, 0.87119997, -0.4989, 0.8231, -0.87119997, 1, 0.8231, -0.87119997, -0.4989, 0.8231, 0.87119997, -0.4989, 0.8231, 0.87119997, 1, 0.8231, -0.87119997, 1, 0.8231, -0.87119997, 1, 0.8231, -0.87119997, -0.4989, -0.8231, -0.87119997, -0.4989, 0.8231, -0.87119997, -0.4989, -0.8231, -0.87119997, 1, 0.8231, -0.87119997, 1, 0.72679996, -0.87119997, -0.4989, -0.8231, -0.87119997, 1, 0.72679996, -0.87119997, 1, -0.8231, -0.79319996, -0.4989, -0.8231, -0.87119997, -0.4989, 0.8231, -0.87119997, -0.4989, -0.8231, -0.79319996, -0.4989, -0.6008, -0.87119997, -0.4989, 0.8231, -0.79319996, -0.4989, -0.8231, -0.606, -0.4989, -0.6008, -0.87119997, -0.4989, 0.8231, -0.79319996, -0.4989, -0.6008, -0.87119997, -0.4989, 0.8231, -0.606, -0.4989, -0.6008, -0.7385, -0.4989, 0.1345, -0.87119997, -0.4989, 0.8231, -0.7385, -0.4989, 0.1345, -0.7385, -0.4989, 0.59029996, -0.5058, -0.4989, 0.59029996, -0.87119997, -0.4989, 0.8231, -0.7385, -0.4989, 0.59029996, -0.7385, -0.4989, 0.1345, -0.606, -0.4989, -0.6008, 0.87119997, -0.4989, -0.8231, 0.87119997, -0.4989, -0.8231, -0.606, -0.4989, -0.6008, -0.606, -0.4989, -0.8231, -0.7385, -0.4989, 0.1345, 0.87119997, -0.4989, -0.8231, -0.5058, -0.4989, 0.1345, -0.5058, -0.4989, 0.1345, 0.87119997, -0.4989, -0.8231, 0.87119997, -0.4989, 0.8231, 0.87119997, -0.4989, 0.8231, -0.87119997, -0.4989, 0.8231, -0.5058, -0.4989, 0.59029996, 0.87119997, -0.4989, 0.8231, -0.5058, -0.4989, 0.59029996, -0.5058, -0.4989, 0.1345, 0.87119997, -0.4989, -0.8231, 0.87119997, 1, 0.8231, 0.87119997, -0.4989, 0.8231, 0.87119997, -0.4989, -0.8231, 0.87119997, 1, -0.8231, 0.87119997, 1, 0.8231, -0.87119997, 1, -0.8231, -0.79319996, -0.4989, -0.8231, -0.87119997, -0.4989, -0.8231, -0.87119997, 1, -0.8231, -0.79319996, 0.4714, -0.8231, -0.79319996, -0.4989, -0.8231, -0.87119997, 1, -0.8231, -0.606, 0.4714, -0.8231, -0.79319996, 0.4714, -0.8231, -0.606, 0.4714, -0.8231, -0.87119997, 1, -0.8231, 0.87119997, -0.4989, -0.8231, 0.87119997, -0.4989, -0.8231, -0.87119997, 1, -0.8231, 0.87119997, 1, -0.8231, -0.606, 0.4714, -0.8231, 0.87119997, -0.4989, -0.8231, -0.606, -0.4989, -0.8231, 0.87119997, 1, -0.8231, -1, 1, -1, 1, 1, -1, -0.87119997, 1, -0.8231, -1, 1, -1, 0.87119997, 1, -0.8231, 1, 1, -1, 0.87119997, 1, 0.8231, 0.87119997, 1, -0.8231, -1, 1, -1, -0.87119997, 1, -0.8231, -0.87119997, 1, 0.72679996, 1, 1, 1, 0.87119997, 1, 0.8231, 1, 1, -1, -1, 1, -1, -0.87119997, 1, 0.72679996, -1, 1, 1, 0.87119997, 1, 0.8231, 1, 1, 1, -1, 1, 1, -0.87119997, 1, 0.8231, -1, 1, 1, -0.87119997, 1, 0.72679996, 0.87119997, 1, 0.8231, -1, 1, 1, -0.87119997, 1, 0.8231, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -0.5058, -1, 0.1345, 1, -1, 1, 1, -1, 1, -0.5058, -1, 0.1345, -0.5058, -1, 0.59029996, -1, -1, -1, -0.7385, -1, 0.1345, -0.5058, -1, 0.1345, -0.7385, -1, 0.59029996, 1, -1, 1, -0.5058, -1, 0.59029996, -0.7385, -1, 0.1345, -1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -0.7385, -1, 0.59029996, -0.7385, -1, 0.1345, -1, -1, 1, -0.7385, -1, 0.2226, -1, -1, 1, -0.7385, -1, 0.59029996, -0.7385, -1, 0.2226, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, -0.79319996, 0.4714, -1, -1, 1, -1, -0.606, 0.4714, -1, -1, 1, -1, -0.79319996, 0.4714, -1, -1, -1, -1, -0.79319996, -0.56049997, -1, -0.79319996, 0.4714, -1, -0.606, 0.4714, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -0.79319996, -0.56049997, -1, 1, 1, -1, -0.606, 0.4714, -1, -0.606, -0.56049997, -1, -0.79319996, -0.56049997, -1, 1, -1, -1, -0.606, -0.56049997, -1, 1, 1, -1, -0.606, -0.56049997, -1, 1, -1, -1, -0.606, -0.56049997, -1, -0.606, -0.4989, -0.6008, -0.606, -0.56049997, -0.6008, -0.606, -0.56049997, -1, -0.606, -0.4989, -0.8231, -0.606, -0.4989, -0.6008, -0.606, -0.56049997, -1, -0.606, 0.4714, -1, -0.606, -0.4989, -0.8231, -0.606, -0.4989, -0.8231, -0.606, 0.4714, -1, -0.606, 0.4714, -0.8231, -0.79319996, -0.56049997, -1, -0.606, -0.56049997, -0.6008, -0.79319996, -0.56049997, -0.6008, -0.79319996, -0.56049997, -1, -0.606, -0.56049997, -1, -0.606, -0.56049997, -0.6008, -0.606, 0.4714, -1, -0.79319996, 0.4714, -0.8231, -0.606, 0.4714, -0.8231, -0.606, 0.4714, -1, -0.79319996, 0.4714, -1, -0.79319996, 0.4714, -0.8231, -0.5058, -1, 0.59029996, -0.5058, -0.4989, 0.1345, -0.5058, -0.4989, 0.59029996, -0.5058, -1, 0.59029996, -0.5058, -1, 0.1345, -0.5058, -0.4989, 0.1345, -0.5058, -1, 0.1345, -0.7385, -0.4989, 0.1345, -0.5058, -0.4989, 0.1345, -0.5058, -1, 0.1345, -0.7385, -1, 0.1345, -0.7385, -0.4989, 0.1345, -0.7385, -1, 0.2226, -0.7385, -0.4989, 0.1345, -0.7385, -1, 0.1345, -0.7385, -0.4989, 0.1345, -0.7385, -1, 0.2226, -0.7385, -1, 0.59029996, -0.7385, -0.4989, 0.1345, -0.7385, -1, 0.59029996, -0.7385, -0.4989, 0.59029996, -0.7385, -1, 0.59029996, -0.5058, -0.4989, 0.59029996, -0.7385, -0.4989, 0.59029996, -0.7385, -1, 0.59029996, -0.5058, -1, 0.59029996, -0.5058, -0.4989, 0.59029996)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_74236"]
+vertices = PackedVector3Array(-17.489418, -4.2233324, 9.1633835, -11.739418, -4.2233324, 9.1633835, -12.239418, -17.823332, -3.836617, -17.739418, -17.823332, -3.836617, -17.628307, -11.023333, 1.9411607, -17.572752, -9.023333, 4.83005, -11.906084, -9.023333, 4.83005, -12.017196, -11.023333, 1.9411607, -16.74931, -12.223332, 1.6872678, -16.754345, -13.023333, 0.15430593, -13.729284, -12.223332, 1.6592412, -13.734322, -13.023333, 0.1762805, -13.749189, -5.423332, 7.647138, -15.244273, -10.223332, 3.1702285, 15.010582, -3.4233322, 1.163383, 15.010582, -3.4233322, 5.163383, 17.760582, -3.4233322, 5.163383, 17.760582, -3.4233322, 1.163383, 15.010582, -2.623333, 2.4967165, 17.760582, -2.623333, 2.4967165, -6.989418, -3.0233326, 1.663383, -6.989418, -3.0233326, 3.913383, -3.989418, -3.0233326, 3.913383, -3.989418, -3.0233326, 1.663383)
+polygons = [PackedInt32Array(2, 11, 3), PackedInt32Array(3, 9, 4), PackedInt32Array(4, 13, 5), PackedInt32Array(5, 12, 0), PackedInt32Array(0, 12, 1), PackedInt32Array(1, 12, 6), PackedInt32Array(6, 10, 7), PackedInt32Array(7, 11, 2), PackedInt32Array(11, 9, 3), PackedInt32Array(9, 8, 4), PackedInt32Array(13, 12, 5), PackedInt32Array(4, 8, 13), PackedInt32Array(12, 13, 6), PackedInt32Array(10, 11, 7), PackedInt32Array(6, 13, 10), PackedInt32Array(11, 8, 9), PackedInt32Array(8, 10, 13), PackedInt32Array(10, 8, 11), PackedInt32Array(17, 19, 14), PackedInt32Array(14, 19, 18), PackedInt32Array(18, 19, 16), PackedInt32Array(18, 16, 15), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21)]
+cell_height = 0.4
+agent_max_climb = 6.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_haehx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_haehx"]
@@ -475,180 +481,183 @@ surface_material_override/0 = ExtResource("1_4e22g")
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, -0.0013393315, -0.028676612, -0.0003009628)
 shape = SubResource("ConcavePolygonShape3D_aicwh")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1480514365]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="NavigationRegion3D/Visuals" unique_id=1296861121]
+navigation_mesh = SubResource("NavigationMesh_74236")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1480514365]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.969176, -18.923332, -3.836617)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D4" unique_id=1453685699]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D4" unique_id=1453685699]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D4/StaticBody3D" unique_id=733813786]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D4/StaticBody3D" unique_id=733813786]
 shape = SubResource("BoxShape3D_haehx")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1341540207]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1341540207]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.796537, -14.121847, 0.77675104)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D6" unique_id=1721304557]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D6" unique_id=1721304557]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D6/StaticBody3D" unique_id=2019089897]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D6/StaticBody3D" unique_id=2019089897]
 shape = SubResource("BoxShape3D_4e22g")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1264463599]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1264463599]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.738856, -10.286608, 4.521315)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D7" unique_id=1655323938]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D7" unique_id=1655323938]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D7/StaticBody3D" unique_id=59848701]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D7/StaticBody3D" unique_id=59848701]
 shape = SubResource("BoxShape3D_kb0wk")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=429843320]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=429843320]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.85849, -12.102295, 2.6565285)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D8" unique_id=1307666415]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D8" unique_id=1307666415]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D8/StaticBody3D" unique_id=277819759]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D8/StaticBody3D" unique_id=277819759]
 shape = SubResource("BoxShape3D_74236")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=994482802]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=994482802]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.855295, -11.151838, 3.6284065)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D9" unique_id=2098465207]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D9" unique_id=2098465207]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D9/StaticBody3D" unique_id=1992627773]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D9/StaticBody3D" unique_id=1992627773]
 shape = SubResource("BoxShape3D_e5y1k")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1190120760]
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1190120760]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.779857, -13.139406, 1.7099953)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D10" unique_id=1384977505]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D10" unique_id=1384977505]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D10/StaticBody3D" unique_id=666897667]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D10/StaticBody3D" unique_id=666897667]
 shape = SubResource("BoxShape3D_yxq5g")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1941022688]
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1941022688]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.622804, -9.342757, 5.5051746)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D12" unique_id=787154402]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D12" unique_id=787154402]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D12/StaticBody3D" unique_id=712608821]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D12/StaticBody3D" unique_id=712608821]
 shape = SubResource("BoxShape3D_of1ct")
 
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1643016867]
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1643016867]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.565123, -5.507518, 9.249739)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D13" unique_id=830112056]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D13" unique_id=830112056]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D13/StaticBody3D" unique_id=1869074604]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D13/StaticBody3D" unique_id=1869074604]
 shape = SubResource("BoxShape3D_tt3qb")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1235496924]
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1235496924]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.684756, -7.323205, 7.384952)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D14" unique_id=1809396321]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D14" unique_id=1809396321]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D14/StaticBody3D" unique_id=839364364]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D14/StaticBody3D" unique_id=839364364]
 shape = SubResource("BoxShape3D_uxhug")
 
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1571421174]
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1571421174]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.681561, -6.3727484, 8.356831)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D15" unique_id=287657014]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D15" unique_id=287657014]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D15/StaticBody3D" unique_id=1168317350]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D15/StaticBody3D" unique_id=1168317350]
 shape = SubResource("BoxShape3D_asryb")
 
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=409680617]
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=409680617]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.606123, -8.360316, 6.438419)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D16" unique_id=1326968801]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D16" unique_id=1326968801]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D16/StaticBody3D" unique_id=512451462]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D16/StaticBody3D" unique_id=512451462]
 shape = SubResource("BoxShape3D_aicwh")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1005322995]
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1005322995]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.7377615, -10.309005, 4.636371)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D11" unique_id=230438491]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D11" unique_id=230438491]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D11/StaticBody3D" unique_id=1521430873]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D11/StaticBody3D" unique_id=1521430873]
 shape = SubResource("BoxShape3D_e5gp5")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1038291054]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1038291054]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.911495, -15.088095, -0.09205246)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D3" unique_id=509687700]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D3" unique_id=509687700]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D3/StaticBody3D" unique_id=398247345]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D3/StaticBody3D" unique_id=398247345]
 shape = SubResource("BoxShape3D_1qm4n")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1278626750]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1278626750]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -15.031128, -16.903782, -1.9568398)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D2" unique_id=1584677158]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D2" unique_id=1584677158]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D2/StaticBody3D" unique_id=53159941]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D2/StaticBody3D" unique_id=53159941]
 shape = SubResource("BoxShape3D_rcx4r")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1947877963]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1947877963]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -15.02794, -15.953325, -0.9849613)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D5" unique_id=627190734]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D5" unique_id=627190734]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D5/StaticBody3D" unique_id=593298165]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D5/StaticBody3D" unique_id=593298165]
 shape = SubResource("BoxShape3D_1n5mb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=1153652725]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=1153652725]
 transform = Transform3D(6.41658, 0, 0, 0, 1, 0, 0, 0, 1, -14.952495, -17.940893, -2.903373)
 material_override = ExtResource("1_4e22g")
 mesh = SubResource("BoxMesh_haehx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D" unique_id=25339537]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D" unique_id=25339537]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D/StaticBody3D" unique_id=722930258]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=722930258]
 shape = SubResource("BoxShape3D_luip8")
 
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=286551198]
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=286551198]
 transform = Transform3D(-1.2364019e-07, 0, -3.7014747, 0, 0.6379881, 0, 2.8285575, 0, -1.617966e-07, -5.4342685, -3.4005451, 2.79653)
 mesh = SubResource("PrismMesh_kb0wk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D17" unique_id=1735042545]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D17" unique_id=1735042545]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D17/StaticBody3D" unique_id=2117251559]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D17/StaticBody3D" unique_id=2117251559]
 shape = SubResource("ConvexPolygonShape3D_kb0wk")
 
-[node name="MeshInstance3D18" type="MeshInstance3D" parent="NavigationRegion3D/Visuals" unique_id=113621983]
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D" unique_id=113621983]
 transform = Transform3D(-2.0618042e-07, 0, -3.7014747, 0, 1.6240625, 0, 4.716858, 0, -1.617966e-07, 16.394459, -3.5507355, 3.170709)
 mesh = SubResource("PrismMesh_kb0wk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/MeshInstance3D18" unique_id=239039864]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D18" unique_id=239039864]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/MeshInstance3D18/StaticBody3D" unique_id=807641549]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Visuals/NavigationRegion3D/MeshInstance3D18/StaticBody3D" unique_id=807641549]
 shape = SubResource("ConvexPolygonShape3D_74236")

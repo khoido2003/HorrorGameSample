@@ -1,107 +1,214 @@
 using System;
+using System.Linq;
 using Godot;
 
 public partial class Enemy : CharacterBody3D
 {
+    public enum State
+    {
+        Patrolling,
+        Chasing,
+        Waiting,
+    }
+
+    [ExportGroup("Movement Settings")]
+    [Export]
+    private float speed = 3.0f;
+
+    [Export]
+    private float rotationSpeed = 5.0f;
+
+    [ExportGroup("Navigation")]
     [Export]
     private Godot.Collections.Array<Node3D> PatrolDestination = new();
 
     [Export]
-    private Player player;
-
-    [Export]
     private NavigationAgent3D navigationAgent3D;
 
-    private float speed = 3.0f;
+    [ExportGroup("Detection")]
+    [Export]
+    private Godot.Collections.Array<RayCast3D> rayCastList = new();
 
+    [Export]
+    private float maxChaseTimeWithoutLosingSight = 10.0f;
+
+    private State currentState = State.Patrolling;
+    private Node3D currentDestination;
+    private int currentPatrolIndex = -1;
     private RandomNumberGenerator rng = new();
 
-    private Node3D destination;
-
-    private bool isChasing = false;
-
-    /////////////////////////////////////////////////////
+    private float stateTimer = 0.0f;
+    private Player detectedPlayer;
 
     public override void _Ready()
     {
         FloorMaxAngle = Mathf.DegToRad(120.0f);
 
-        navigationAgent3D.NavigationFinished += OnReachedDestination;
+        if (navigationAgent3D != null)
+        {
+            navigationAgent3D.NavigationFinished += OnReachedDestination;
+            navigationAgent3D.PathDesiredDistance = 2.0f;
+            navigationAgent3D.TargetDesiredDistance = 2.0f;
+        }
 
-        navigationAgent3D.PathDesiredDistance = 2.0f;
-        navigationAgent3D.TargetDesiredDistance = 2.0f;
-
-        PickDestination();
+        ChangeState(State.Patrolling);
     }
-
-    public int DestinationIndex { get; private set; }
 
     public override void _Process(double delta)
     {
-        if (Velocity.LengthSquared() > 0.01f)
-        {
-            float targetAngle = Mathf.Atan2(-Velocity.X, -Velocity.Z);
-
-            float newAngle = Mathf.LerpAngle(
-                Rotation.Y,
-                targetAngle,
-                (float)(delta * 5.0f) // rotation speed
-            );
-
-            Rotation = new Vector3(Rotation.X, newAngle, Rotation.Z);
-        }
+        HandleRotation((float)delta);
+        UpdateTimers((float)delta);
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (destination == null)
+        CheckForPlayer();
+
+        switch (currentState)
         {
-            return;
+            case State.Patrolling:
+                MoveTowardsTarget();
+                break;
+            case State.Chasing:
+                UpdateChaseTarget();
+                MoveTowardsTarget();
+                break;
+            case State.Waiting:
+                Velocity = Vector3.Zero;
+                break;
         }
 
-        var currentLocation = GlobalTransform.Origin;
-        var nextLocation = navigationAgent3D.GetNextPathPosition();
+        MoveAndSlide();
+        if (navigationAgent3D != null)
+        {
+            navigationAgent3D.Velocity = Velocity;
+        }
+    }
 
-        var direction = nextLocation - currentLocation;
+    private void ChangeState(State newState)
+    {
+        currentState = newState;
+        stateTimer = 0.0f;
+
+        switch (newState)
+        {
+            case State.Patrolling:
+                PickNextPatrolPoint();
+                break;
+            case State.Chasing:
+                // Start chasing immediately
+                UpdateChaseTarget();
+                break;
+            case State.Waiting:
+                Velocity = Vector3.Zero;
+                stateTimer = rng.RandfRange(1.0f, 10.0f);
+                break;
+        }
+    }
+
+    private void UpdateTimers(float delta)
+    {
+        if (currentState == State.Waiting)
+        {
+            stateTimer -= delta;
+            if (stateTimer <= 0)
+            {
+                ChangeState(State.Patrolling);
+            }
+        }
+        else if (currentState == State.Chasing)
+        {
+            stateTimer += delta;
+            if (stateTimer > maxChaseTimeWithoutLosingSight)
+            {
+                ChangeState(State.Patrolling);
+            }
+        }
+    }
+
+    private void CheckForPlayer()
+    {
+        foreach (var raycast in rayCastList)
+        {
+            if (raycast.IsColliding() && raycast.GetCollider() is Player playerNode)
+            {
+                detectedPlayer = playerNode;
+                if (currentState != State.Chasing)
+                {
+                    ChangeState(State.Chasing);
+                }
+                else
+                {
+                    // Reset chase timer while player is in sight
+                    stateTimer = 0.0f;
+                }
+                return;
+            }
+        }
+    }
+
+    private void UpdateChaseTarget()
+    {
+        if (detectedPlayer != null && navigationAgent3D != null)
+        {
+            currentDestination = detectedPlayer;
+            navigationAgent3D.TargetPosition = currentDestination.GlobalPosition;
+        }
+    }
+
+    private void PickNextPatrolPoint()
+    {
+        if (PatrolDestination.Count == 0 || navigationAgent3D == null)
+            return;
+
+        int nextIndex;
+        do
+        {
+            nextIndex = rng.RandiRange(0, PatrolDestination.Count - 1);
+        } while (PatrolDestination.Count > 1 && nextIndex == currentPatrolIndex);
+
+        currentPatrolIndex = nextIndex;
+        currentDestination = PatrolDestination[currentPatrolIndex];
+        navigationAgent3D.TargetPosition = currentDestination.GlobalPosition;
+    }
+
+    private void MoveTowardsTarget()
+    {
+        if (currentDestination == null || navigationAgent3D == null)
+            return;
+
+        Vector3 nextPathPos = navigationAgent3D.GetNextPathPosition();
+        Vector3 direction = (nextPathPos - GlobalPosition);
         direction.Y = 0;
 
-        if (direction.LengthSquared() > 0.0001f)
+        if (direction.LengthSquared() > 0.01f)
         {
-            direction = direction.Normalized();
-            Velocity = direction * speed;
+            Velocity = direction.Normalized() * speed;
         }
         else
         {
             Velocity = Vector3.Zero;
         }
-
-        MoveAndSlide();
-
-        navigationAgent3D.Velocity = Velocity;
     }
 
-    private void PickDestination(int indexNotChosenDestination = -1)
+    private void HandleRotation(float delta)
     {
-        int chosenIndex;
-
-        do
+        if (Velocity.LengthSquared() > 0.01f)
         {
-            chosenIndex = rng.RandiRange(0, PatrolDestination.Count - 1);
-        } while (PatrolDestination.Count > 1 && chosenIndex == indexNotChosenDestination);
-
-        DestinationIndex = chosenIndex;
-        destination = PatrolDestination[chosenIndex];
-
-        UpdateTargetLocation();
-    }
-
-    private void UpdateTargetLocation()
-    {
-        navigationAgent3D.TargetPosition = destination.GlobalTransform.Origin;
+            float targetAngle = Mathf.Atan2(-Velocity.X, -Velocity.Z);
+            Rotation = new Vector3(
+                Rotation.X,
+                Mathf.LerpAngle(Rotation.Y, targetAngle, delta * rotationSpeed),
+                Rotation.Z
+            );
+        }
     }
 
     public void OnReachedDestination()
     {
-        PickDestination(DestinationIndex);
+        if (currentState == State.Patrolling)
+        {
+            ChangeState(State.Waiting);
+        }
     }
 }
