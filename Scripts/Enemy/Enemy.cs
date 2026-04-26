@@ -20,6 +20,9 @@ public partial class Enemy : CharacterBody3D
 
     public StateMachine FSM;
 
+    private Vector3 lastPosition;
+    private float stuckTimer = 0f;
+
     // States
     public PatrolState PatrolState;
     public ChaseState ChaseState;
@@ -51,6 +54,8 @@ public partial class Enemy : CharacterBody3D
         {
             NavAgent.Velocity = Velocity;
         }
+
+        HandleStuckAtCorner((float)delta);
     }
 
     public void MoveTo(Vector3 target)
@@ -95,5 +100,47 @@ public partial class Enemy : CharacterBody3D
             Mathf.LerpAngle(Rotation.Y, targetAngle, delta * RotationSpeed),
             Rotation.Z
         );
+    }
+
+    private void HandleStuckAtCorner(float delta)
+    {
+        float movement = GlobalPosition.DistanceTo(lastPosition);
+
+        if (movement < 0.02f)
+        {
+            stuckTimer += delta;
+        }
+        else
+        {
+            stuckTimer = 0f;
+        }
+
+        lastPosition = GlobalPosition;
+
+        if (stuckTimer > 1.0f)
+        {
+            ForceUnstuck();
+
+            stuckTimer = 0f;
+        }
+    }
+
+    private void ForceUnstuck()
+    {
+        if (NavAgent == null)
+        {
+            return;
+        }
+
+        // Direction away from obstacle (randomized)
+        Vector3 randomDir = new Vector3(GD.RandRange(-1, 1), 0, GD.RandRange(-1, 1)).Normalized();
+
+        // Push enemy slightly
+        GlobalPosition += randomDir * 3.5f;
+
+        // Force path refresh properly
+        Vector3 target = NavAgent.TargetPosition;
+        NavAgent.TargetPosition = GlobalPosition;
+        NavAgent.TargetPosition = target;
     }
 }
