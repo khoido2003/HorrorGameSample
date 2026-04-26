@@ -15,10 +15,11 @@ radius = 1.0
 height = 4.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0s4r2"]
-radius = 0.5996094
-height = 3.1259766
+radius = 0.71191406
+height = 3.5463867
 
 [node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlightController", "inventory", "visualHolder")]
+collision_layer = 2
 script = ExtResource("1_l8h54")
 collision = NodePath("CollisionShape3D")
 flashlightController = NodePath("FlashLight")
@@ -36,7 +37,7 @@ target = NodePath("../Head")
 mesh = SubResource("CapsuleMesh_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1036658161]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7285141, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.518309, 0)
 shape = SubResource("CapsuleShape3D_0s4r2")
 
 [node name="PlayerZoom" type="Node3D" parent="." unique_id=1724466585 node_paths=PackedStringArray("camera")]

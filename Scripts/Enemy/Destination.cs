@@ -8,11 +8,5 @@ public partial class Destination : Area3D
         BodyEntered += OnBodyEntered;
     }
 
-    private void OnBodyEntered(Node body)
-    {
-        if (body is Enemy enemy)
-        {
-            enemy.OnReachedDestination();
-        }
-    }
+    private void OnBodyEntered(Node body) { }
 }
