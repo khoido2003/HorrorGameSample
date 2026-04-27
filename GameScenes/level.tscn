@@ -532,5 +532,7 @@ PatrolPoints = [NodePath("../Destination"), NodePath("../Destination2"), NodePat
 Player = NodePath("../Player")
 
 [node name="SceneChangedTrigger" parent="." unique_id=1040643432 instance=ExtResource("47_oiuad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.904557, -11.4699745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86836445, -1.4813898, -10.13892)
+collision_layer = 3
+collision_mask = 3
 scene = ExtResource("48_nup2i")
