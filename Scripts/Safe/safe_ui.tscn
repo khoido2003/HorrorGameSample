@@ -36,10 +36,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=987367293]
-offset_left = 398.0
-offset_top = 239.0
-offset_right = 819.0
-offset_bottom = 355.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -127.0
+offset_right = 211.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 placeholder_text = "XXXX"
 alignment = 1
@@ -48,20 +55,34 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 
 [node name="Confirm" type="Button" parent="." unique_id=708152206]
-offset_left = 441.0
-offset_top = 411.0
-offset_right = 760.0
-offset_bottom = 491.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = 57.0
+offset_right = 160.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_r06rm")
 text = "Confirm"
 
 [node name="Back" type="Button" parent="." unique_id=86211976]
-offset_left = 439.0
-offset_top = 514.0
-offset_right = 758.0
-offset_bottom = 594.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = 167.0
+offset_right = 160.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_7urih")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://wiu7ik1v1j6f"]
+
+[ext_resource type="Script" uid="uid://c7wc401qefd03" path="res://Scripts/Interactables/Money.cs" id="1_0s2vb"]
+[ext_resource type="Texture2D" uid="uid://b138d7rssiqyb" path="res://Assets/money.png" id="1_oitdh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0s2vb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lscvu"]
+albedo_texture = ExtResource("1_oitdh")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oitdh"]
+
+[node name="Money" type="Node3D" unique_id=1362692298]
+script = ExtResource("1_0s2vb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1137562573]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_0s2vb")
+surface_material_override/0 = SubResource("StandardMaterial3D_lscvu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1030367955]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=204561744]
+shape = SubResource("BoxShape3D_oitdh")

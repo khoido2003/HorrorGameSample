@@ -55,7 +55,10 @@ public partial class Enemy : CharacterBody3D
             NavAgent.Velocity = Velocity;
         }
 
-        HandleStuckAtCorner((float)delta);
+        if (IsMovingState())
+        {
+            HandleStuckAtCorner((float)delta);
+        }
     }
 
     public void MoveTo(Vector3 target)
@@ -81,7 +84,7 @@ public partial class Enemy : CharacterBody3D
         }
 
         Vector3 nextPos = NavAgent.GetNextPathPosition();
-        Vector3 dir = (nextPos - GlobalPosition);
+        Vector3 dir = nextPos - GlobalPosition;
         dir.Y = 0;
 
         Velocity = dir.Normalized() * Speed;
@@ -136,11 +139,16 @@ public partial class Enemy : CharacterBody3D
         Vector3 randomDir = new Vector3(GD.RandRange(-1, 1), 0, GD.RandRange(-1, 1)).Normalized();
 
         // Push enemy slightly
-        GlobalPosition += randomDir * 3.5f;
+        GlobalPosition += randomDir * 1.5f;
 
         // Force path refresh properly
         Vector3 target = NavAgent.TargetPosition;
         NavAgent.TargetPosition = GlobalPosition;
         NavAgent.TargetPosition = target;
+    }
+
+    private bool IsMovingState()
+    {
+        return FSM.CurrentState == PatrolState || FSM.CurrentState == ChaseState;
     }
 }

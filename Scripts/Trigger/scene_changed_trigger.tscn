@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bjol6cvjorsfp"]
+
+[ext_resource type="Script" uid="uid://dp6prttdumfgl" path="res://Scripts/Trigger/SceneChangedTrigger.cs" id="1_5ns4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_521cb"]
+
+[node name="SceneChangedTrigger" type="Area3D" unique_id=1040643432]
+script = ExtResource("1_5ns4j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1623577655]
+shape = SubResource("BoxShape3D_521cb")

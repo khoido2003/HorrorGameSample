@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dgbm6wqqiut4w"]
+
+[ext_resource type="Script" uid="uid://cc4lyo2m6cqd0" path="res://Scripts/UI/Ending.cs" id="1_b3npv"]
+
+[sub_resource type="Animation" id="Animation_b3npv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_toh01"]
+resource_name = "fade"
+length = 4.4666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3npv"]
+_data = {
+&"RESET": SubResource("Animation_b3npv"),
+&"fade": SubResource("Animation_toh01")
+}
+
+[node name="ending" type="Control" unique_id=267601048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3npv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1181884420]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=327662666]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11366529, 0.11366529, 0.113665275, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=576941814]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -235.0
+offset_right = 530.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 50
+text = "You Escaped The House"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1843626305]
+libraries/ = SubResource("AnimationLibrary_b3npv")

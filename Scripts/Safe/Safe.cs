@@ -34,5 +34,6 @@ public partial class Safe : Node3D, IInteractable
     public void Interact(Player player)
     {
         safeUi.OpenSafePassword(password);
+        animationPlayer.Play("open");
     }
 }

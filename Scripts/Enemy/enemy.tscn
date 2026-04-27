@@ -16,6 +16,7 @@ albedo_color = Color(0.9870499, 0, 0.3450364, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_brvl6"]
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1322371223 node_paths=PackedStringArray("NavAgent", "PatrolPoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_brvl6")
 NavAgent = NodePath("NavigationAgent3D")
 PatrolPoints = []
@@ -26,7 +27,7 @@ target_desired_distance = 2.0
 debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2092589067]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06664002, -1.0009155, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06664002, -0.8742589, 0)
 shape = SubResource("CapsuleShape3D_1i55d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1082040970]
