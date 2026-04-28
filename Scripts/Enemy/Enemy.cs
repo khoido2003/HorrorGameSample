@@ -18,6 +18,9 @@ public partial class Enemy : CharacterBody3D
     [Export]
     public Player Player;
 
+    [Export]
+    private EnemyVisual enemyVisual;
+
     public StateMachine FSM;
 
     private Vector3 lastPosition;
@@ -57,7 +60,12 @@ public partial class Enemy : CharacterBody3D
 
         if (IsMovingState())
         {
+            enemyVisual.PlayAnimation("walk");
             HandleStuckAtCorner((float)delta);
+        }
+        else
+        {
+            enemyVisual.PlayAnimation("idle");
         }
     }
 
