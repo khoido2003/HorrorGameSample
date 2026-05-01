@@ -21,6 +21,17 @@ public partial class Enemy : CharacterBody3D
     [Export]
     private EnemyVisual enemyVisual;
 
+    [Export]
+    private Area3D jumpscareArea;
+
+    [Export]
+    private Camera3D jumpscareCamera;
+
+    [Export]
+    private DeathUI deathUI;
+
+    private bool hasJumpscared;
+
     public StateMachine FSM;
 
     private Vector3 lastPosition;
@@ -30,6 +41,7 @@ public partial class Enemy : CharacterBody3D
     public PatrolState PatrolState;
     public ChaseState ChaseState;
     public WaitState WaitState;
+    public JumpScareState JumpScareState;
 
     public override void _Ready()
     {
@@ -38,8 +50,11 @@ public partial class Enemy : CharacterBody3D
         PatrolState = new PatrolState(this);
         ChaseState = new ChaseState(this);
         WaitState = new WaitState(this);
+        JumpScareState = new JumpScareState(this);
 
         FSM.ChangeState(PatrolState);
+
+        jumpscareArea.BodyEntered += OnJumpscareTriggered;
     }
 
     public override void _Process(double delta)
@@ -57,15 +72,24 @@ public partial class Enemy : CharacterBody3D
         {
             NavAgent.Velocity = Velocity;
         }
+    }
 
-        if (IsMovingState())
+    private void OnJumpscareTriggered(Node3D body)
+    {
+        if (hasJumpscared)
         {
-            enemyVisual.PlayAnimation("walk");
-            HandleStuckAtCorner((float)delta);
+            GD.Print("Already jumpscared");
+            return;
+        }
+
+        if (body is Player player)
+        {
+            hasJumpscared = true;
+            FSM.ChangeState(JumpScareState);
         }
         else
         {
-            enemyVisual.PlayAnimation("idle");
+            GD.Print("Not player, it's: ", body.GetType());
         }
     }
 
@@ -155,8 +179,18 @@ public partial class Enemy : CharacterBody3D
         NavAgent.TargetPosition = target;
     }
 
-    private bool IsMovingState()
+    public void PlayAnimation(string name)
     {
-        return FSM.CurrentState == PatrolState || FSM.CurrentState == ChaseState;
+        enemyVisual.PlayAnimation(name);
+    }
+
+    public void ActivateJumpscareCamera()
+    {
+        jumpscareCamera.Current = true;
+    }
+
+    public void ShowDeathUI()
+    {
+        deathUI.ShowDeathScreen();
     }
 }

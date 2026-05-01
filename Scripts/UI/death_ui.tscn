@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://smchkbcqmsgh"]
+
+[ext_resource type="Script" uid="uid://c1pjkxhbe0jct" path="res://Scripts/UI/DeathUI.cs" id="1_4cvst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cvst"]
+bg_color = Color(8.904189e-07, 0.45691496, 0.277917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkrwj"]
+bg_color = Color(0.08530017, 0.27817547, 0.1462507, 1)
+
+[node name="DeathUI" type="Control" unique_id=532110833 node_paths=PackedStringArray("restartButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cvst")
+restartButton = NodePath("RestartButton")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1578717713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1126784695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="RestartButton" type="Button" parent="." unique_id=1912252608]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 667.0
+offset_right = 1163.0
+offset_bottom = 839.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cvst")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gkrwj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gkrwj")
+text = "Restart"

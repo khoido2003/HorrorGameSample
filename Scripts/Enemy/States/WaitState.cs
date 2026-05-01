@@ -15,6 +15,8 @@ public class WaitState : IState
     {
         waitTime = rng.RandfRange(1f, 3f);
         enemy.Velocity = Vector3.Zero;
+
+        enemy.PlayAnimation("idle");
     }
 
     public void Exit() { }

@@ -14,6 +14,7 @@ public class PatrolState : IState
 
     public void Enter()
     {
+        enemy.PlayAnimation("walk");
         PickNextPoint();
     }
 

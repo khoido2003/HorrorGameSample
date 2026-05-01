@@ -24,6 +24,11 @@ public partial class SceneChangedTrigger : Area3D
             return;
         }
 
+        CallDeferred(nameof(ChangeScene));
+    }
+
+    private void ChangeScene()
+    {
         GetTree().ChangeSceneToPacked(scene);
     }
 }

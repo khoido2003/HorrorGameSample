@@ -39,7 +39,7 @@ _data = {
 &"fade": SubResource("Animation_toh01")
 }
 
-[node name="ending" type="Control" unique_id=267601048]
+[node name="ending" type="Control" unique_id=267601048 node_paths=PackedStringArray("animationPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,6 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3npv")
+animationPlayer = NodePath("CanvasLayer/AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1181884420]
 

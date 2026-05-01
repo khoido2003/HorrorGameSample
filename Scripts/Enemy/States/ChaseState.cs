@@ -14,6 +14,7 @@ public class ChaseState : IState
     public void Enter()
     {
         timer = 0f;
+        enemy.PlayAnimation("walk");
     }
 
     public void Exit() { }

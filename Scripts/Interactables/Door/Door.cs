@@ -34,6 +34,9 @@ public partial class Door : Node, IInteractable
             if (!player.PlayerInventory.TryInteractWith(this, player))
             {
                 GD.Print("Door is locked.");
+
+                player.guideText?.ShowText("Need a key");
+
                 return;
             }
         }

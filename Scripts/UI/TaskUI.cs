@@ -8,7 +8,7 @@ public partial class TaskUI : CanvasLayer
 
     public override void _Ready()
     {
-        SetTask("Turn on the light");
+        SetTask("Turn on the light on the wall");
     }
 
     public void SetTask(string text)

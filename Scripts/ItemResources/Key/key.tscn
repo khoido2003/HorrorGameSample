@@ -7,6 +7,8 @@ size = Vector3(0.91796875, 0.22833252, 2.1049805)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxp3v"]
 albedo_color = Color(0.42841837, 0.22079957, 0.011648749, 1)
+emission_enabled = true
+emission = Color(0.77131367, 0.49382618, 0.1343537, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3pchu"]
 

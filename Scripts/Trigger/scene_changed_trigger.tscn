@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dp6prttdumfgl" path="res://Scripts/Trigger/SceneChangedTrigger.cs" id="1_5ns4j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_521cb"]
+size = Vector3(2.8898926, 4.8234863, 2.5667725)
 
 [node name="SceneChangedTrigger" type="Area3D" unique_id=1040643432]
 script = ExtResource("1_5ns4j")

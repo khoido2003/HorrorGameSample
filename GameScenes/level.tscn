@@ -37,7 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://wiu7ik1v1j6f" path="res://Scripts/Interactables/money.tscn" id="34_wqee0"]
 [ext_resource type="PackedScene" uid="uid://dt7dus4co844o" path="res://Scripts/Interactables/Drawer/drawer.tscn" id="36_aoppg"]
 [ext_resource type="PackedScene" uid="uid://b0bpshytysla2" path="res://Scripts/Safe/safe_ui.tscn" id="37_feeww"]
+[ext_resource type="PackedScene" uid="uid://smchkbcqmsgh" path="res://Scripts/UI/death_ui.tscn" id="38_026yc"]
 [ext_resource type="PackedScene" uid="uid://dvpk3diwy172h" path="res://Scripts/UI/task_ui.tscn" id="38_i6oue"]
+[ext_resource type="PackedScene" uid="uid://qgtjy8n7xoi7" path="res://Scripts/UI/guide_text.tscn" id="38_q2dty"]
 [ext_resource type="PackedScene" uid="uid://cgbett5wfv5u4" path="res://Scripts/UI/pause_ui.tscn" id="39_4pkij"]
 [ext_resource type="PackedScene" uid="uid://dcatjon4bb5dp" path="res://Scripts/Safe/safe.tscn" id="40_yoooh"]
 [ext_resource type="PackedScene" uid="uid://ds4mkuppogg6y" path="res://Scripts/Task/task_trigger.tscn" id="41_ucgf6"]
@@ -139,8 +141,9 @@ albedo_color = Color(0.5425574, 0.52992046, 0.51391894, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=682351109]
 environment = SubResource("Environment_xto7t")
 
-[node name="Player" parent="." unique_id=1575378184 instance=ExtResource("1_6dyc3")]
-transform = Transform3D(0.9976843, 0, -0.068015255, 0, 1, 0, 0.068015255, 0, 0.9976843, -12.612316, 3.3039162, 33.453358)
+[node name="Player" parent="." unique_id=1575378184 node_paths=PackedStringArray("guideText") instance=ExtResource("1_6dyc3")]
+transform = Transform3D(0.99889815, 0, -0.04693201, 0, 1, 0, 0.04693201, 0, 0.99889815, -12.055523, 3.189852, 33.647278)
+guideText = NodePath("../CanvasLayer/GuideText")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=357770781]
 transform = Transform3D(1, 0, 0, 0, 0.18628402, 0.98249596, 0, -0.98249596, 0.18628402, 0, 16.538319, 4.587384)
@@ -422,12 +425,12 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 
 [node name="safe" parent="NavigationRegion3D" unique_id=1047189031 node_paths=PackedStringArray("safeUi", "safeCodePaper") instance=ExtResource("40_yoooh")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 5.203793, -8.756664, 19.130146)
-safeUi = NodePath("../../SafeUI")
+safeUi = NodePath("../../CanvasLayer/SafeUI")
 safeCodePaper = NodePath("../../code_paper")
 
 [node name="Money" parent="NavigationRegion3D/safe" unique_id=1362692298 node_paths=PackedStringArray("taskUI") instance=ExtResource("34_wqee0")]
 transform = Transform3D(0.99999946, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 0.99999946, 0.7143192, -0.8082733, -0.42809296)
-taskUI = NodePath("../../../task_UI")
+taskUI = NodePath("../../../CanvasLayer/task_UI")
 
 [node name="LightBulbs" type="Node3D" parent="." unique_id=1499360456]
 
@@ -461,7 +464,6 @@ lightBulb = NodePath("../../LightBulbs/LightBulb")
 
 [node name="LightSwitch2" parent="LightSwitchs" unique_id=2046787295 node_paths=PackedStringArray("lightBulb") instance=ExtResource("33_e6uwv")]
 transform = Transform3D(-0.006056145, 0, -0.49996334, 0, 0.5, 0, 0.49996334, 0, -0.006056145, -7.68742, 2.5518231, 29.252464)
-isOn = true
 lightBulb = NodePath("../../LightBulbs/LightBulb4")
 
 [node name="LightSwitch3" parent="LightSwitchs" unique_id=897230877 node_paths=PackedStringArray("lightBulb") instance=ExtResource("33_e6uwv")]
@@ -480,23 +482,49 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.2666895, 2.9203022, 
 isOn = true
 offMat = SubResource("StandardMaterial3D_jmcc3")
 
-[node name="SafeUI" parent="." unique_id=1497986916 instance=ExtResource("37_feeww")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=505927534]
 
-[node name="task_UI" parent="." unique_id=2003581527 instance=ExtResource("38_i6oue")]
+[node name="GuideText" parent="CanvasLayer" unique_id=453198298 instance=ExtResource("38_q2dty")]
 
-[node name="PauseUI" parent="." unique_id=1862138323 node_paths=PackedStringArray("safeUi") instance=ExtResource("39_4pkij")]
+[node name="SafeUI" parent="CanvasLayer" unique_id=1497986916 instance=ExtResource("37_feeww")]
+
+[node name="task_UI" parent="CanvasLayer" unique_id=2003581527 instance=ExtResource("38_i6oue")]
+
+[node name="DeathUI" parent="CanvasLayer" unique_id=532110833 instance=ExtResource("38_026yc")]
+
+[node name="PauseUI" parent="CanvasLayer" unique_id=1862138323 node_paths=PackedStringArray("safeUi") instance=ExtResource("39_4pkij")]
 safeUi = NodePath("../SafeUI")
 
 [node name="Trigger_1" parent="." unique_id=1704954837 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.286091, 0.73974204, 20.409266)
-taskUI = NodePath("../task_UI")
-taskText = "Find Your Money"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.643024, 0.73974204, 16.86762)
+collision_layer = 2
+collision_mask = 2
+taskUI = NodePath("../CanvasLayer/task_UI")
+taskText = "Find the money in the Basement"
+enemy = NodePath("../Enemy")
+
+[node name="Trigger_4" parent="." unique_id=2061060866 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.27115, 0.73974204, 25.19843)
+collision_layer = 2
+collision_mask = 2
+taskUI = NodePath("../CanvasLayer/task_UI")
+taskText = "Find the money in the Basement"
+enemy = NodePath("../Enemy")
+
+[node name="Trigger_3" parent="." unique_id=1735142867 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.628166, 0.73974204, 20.493261)
+collision_layer = 2
+collision_mask = 2
+taskUI = NodePath("../CanvasLayer/task_UI")
+taskText = "Find the money in the Basement"
 enemy = NodePath("../Enemy")
 
 [node name="Trigger_2" parent="." unique_id=1962356279 node_paths=PackedStringArray("taskUI", "enemy") instance=ExtResource("41_ucgf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.975479, -9.720587, 21.650015)
-taskUI = NodePath("../task_UI")
-taskText = "Collect The Money and Leave"
+collision_layer = 2
+collision_mask = 2
+taskUI = NodePath("../CanvasLayer/task_UI")
+taskText = "Find the safe code, collect the money and leave the house through the garden"
 enemy = NodePath("../Enemy")
 
 [node name="code_paper" parent="." unique_id=2054025636 node_paths=PackedStringArray("spawnPosList") instance=ExtResource("42_clpe6")]
@@ -510,7 +538,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1085875, 1.750393, 27.20310
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.19121, 0.50699115, 31.550827)
 
 [node name="ItemPickup" parent="." unique_id=675945403 instance=ExtResource("44_m6mcl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.272541, 0.99919677, 24.96903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.142612, 0.99919677, 22.039417)
 collision_layer = 3
 collision_mask = 3
 
@@ -526,13 +554,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.406601, -2.0833724, -1.46
 [node name="Destination4" parent="." unique_id=1274105991 instance=ExtResource("46_wqee0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83243513, -2.0594237, 11.567917)
 
-[node name="Enemy" parent="." unique_id=1322371223 node_paths=PackedStringArray("PatrolPoints", "Player") instance=ExtResource("45_xtl4i")]
+[node name="Enemy" parent="." unique_id=1322371223 node_paths=PackedStringArray("PatrolPoints", "Player", "deathUI") instance=ExtResource("45_xtl4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3656609, -0.6585181, 2.9113274)
 PatrolPoints = [NodePath("../Destination"), NodePath("../Destination2"), NodePath("../Destination3"), NodePath("../Destination4")]
 Player = NodePath("../Player")
+deathUI = NodePath("../CanvasLayer/DeathUI")
 
 [node name="SceneChangedTrigger" parent="." unique_id=1040643432 instance=ExtResource("47_oiuad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86836445, -1.4813898, -10.13892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86836445, -1.4813898, -12.341249)
 collision_layer = 3
 collision_mask = 3
 scene = ExtResource("48_nup2i")
+
+[node name="CollisionShape3D" parent="SceneChangedTrigger" index="0" unique_id=1623577655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030517578, 1.7801514, 0.78338623)
+
+[node name="Door" parent="SceneChangedTrigger" unique_id=143519168 instance=ExtResource("21_e2i0e")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.5221947, -0.1336689)
+
+[editable path="SceneChangedTrigger"]

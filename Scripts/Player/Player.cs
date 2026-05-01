@@ -9,6 +9,9 @@ public partial class Player : CharacterBody3D
     private bool isCrouch = false;
 
     [Export]
+    public GuideText guideText;
+
+    [Export]
     private CollisionShape3D collision;
 
     [Export]
@@ -19,6 +22,8 @@ public partial class Player : CharacterBody3D
 
     [Export]
     private PlayerVisualHolder visualHolder;
+
+    private bool isDisabled = false;
 
     public PlayerVisualHolder VisualHolder
     {
@@ -39,6 +44,9 @@ public partial class Player : CharacterBody3D
 
     public override void _Process(double delta)
     {
+        if (isDisabled)
+            return;
+
         if (Input.IsActionJustPressed("crouch"))
         {
             isCrouch = !isCrouch;
@@ -56,6 +64,13 @@ public partial class Player : CharacterBody3D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (isDisabled)
+        {
+            Velocity = Vector3.Zero;
+            MoveAndSlide();
+            return;
+        }
+
         Vector3 velocity = Velocity;
 
         // Add the gravity.
@@ -100,5 +115,11 @@ public partial class Player : CharacterBody3D
 
         Velocity = velocity;
         MoveAndSlide();
+    }
+
+    public void DisableControl()
+    {
+        isDisabled = true;
+        Input.MouseMode = Input.MouseModeEnum.Visible;
     }
 }

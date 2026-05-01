@@ -7,12 +7,18 @@
 radius = 0.5292969
 height = 2.1534424
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1322371223 node_paths=PackedStringArray("NavAgent", "PatrolPoints", "enemyVisual")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dr0v2"]
+radius = 1.7998047
+height = 5.227051
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1322371223 node_paths=PackedStringArray("NavAgent", "PatrolPoints", "enemyVisual", "jumpscareArea", "jumpscareCamera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_brvl6")
 NavAgent = NodePath("NavigationAgent3D")
 PatrolPoints = []
 enemyVisual = NodePath("enemyVisual")
+jumpscareArea = NodePath("JumpscareArea")
+jumpscareCamera = NodePath("enemyVisual/Body/UpperLeftArm/Sphere_003/JumpScareCamera")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=643536808]
 path_desired_distance = 2.0
@@ -30,3 +36,20 @@ collision_mask = 2
 
 [node name="enemyVisual" parent="." unique_id=2054300640 instance=ExtResource("2_dr0v2")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -2.2660537, 0)
+
+[node name="UpperRightArm" parent="enemyVisual/Body" parent_id_path=PackedInt32Array(2054300640, 356542888) index="1" unique_id=797034922]
+transform = Transform3D(0.9999984, 0, 0, 0, 0.5492263, 0.835672, 0, -0.83567214, 0.5492262, 0.0290286, -0.07030654, -0.5827386)
+
+[node name="JumpScareCamera" type="Camera3D" parent="enemyVisual/Body/UpperLeftArm/Sphere_003" parent_id_path=PackedInt32Array(2054300640, 1710465461) index="0" unique_id=1285597952]
+transform = Transform3D(-0.30610055, 3.8040571, 0.66261667, 3.5621083, 0.42156884, -0.7746692, -0.97646964, 0.6426183, -4.140334, 3.512577, -2.044437, -1.9947677)
+
+[node name="JumpscareArea" type="Area3D" parent="." unique_id=1606496942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.21197343)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpscareArea" unique_id=693630410]
+transform = Transform3D(0.99989045, 0.0028288797, 0.014527412, -0.0032067373, 0.9996554, 0.026051208, -0.014448706, -0.026094943, 0.999555, -0.00047309147, 0.22393465, 0.0043640225)
+shape = SubResource("CapsuleShape3D_dr0v2")
+
+[editable path="enemyVisual"]

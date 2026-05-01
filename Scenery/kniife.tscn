@@ -1,0 +1,107 @@
+[gd_scene format=4 uid="uid://cy1ouvff4bd4f"]
+
+[ext_resource type="Material" uid="uid://b8wpajjdwkqnm" path="res://Assets/Materials/metal.tres" id="1_efayc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41kfd"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fbp6k"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAIAAAAHAAYABQACAAYABwAFAAYAAwAAAAIABwAAAAMABQAEAAIAAwACAAQABwABAAUABwADAAEAAQAEAAUAAQADAAQA"),
+"lods": [2.0, PackedByteArray("AAABAAIAAQAAAAMAAwAAAAIAAQADAAQAAwACAAQAAQAFAAIABQAEAAIAAQAEAAUA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAA/////wAA//8AAP//AAD///////8AAP////8AAAAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hxvap"]
+resource_name = "kniife_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////9f/3//n////5//f/+f/z//3/8//1//P/8f/z//nwAA/18AAP+f/7//X/+//9//f/8f/38="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAAKAAIAAAALAAoACwADAAoACwABAAMAAwAFAAwAAwAEAAUAAQAEAAMAAQAGAAQABgAIAAQABgAJAAgADQAGAAEADQAHAAYA"),
+"lods": [2.0, PackedByteArray("AAABAAIAAQADAAIAAQAEAAMAAwAEAAUAAQAGAAQAAQAHAAYABgAIAAQABgAJAAgA")],
+"material": SubResource("StandardMaterial3D_41kfd"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("AAAAAP//c9H//wAAAADq2gAA/////0rA/////wAA+vT///////8E3QAA/////4f2//8AAP//gLYAAAAA//8/qAAA/////0rAAAAAAP//c9EAAP//AABv2QAAAAAAABr7AAD//wAA4ugAAAAAAACT4TDQs/njJzBLufjFyDg9eiBmKbIMgmibnmsRyzicQhmvufjFyDDQs/n6yua6+spQ1xh1zNKxJ5+L")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fbp6k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8vgc"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bjl44"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgADAAUABAAAAAYABwAAAAIABwACAAUAAAAHAAYACAAFAAMAAQAIAAMACAAHAAUACQABAAQAAQAJAAgABAAGAAkACQAHAAgACQAGAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAPZwAAAAAAAA9nD//wAAC2b//wAAAAAAAAAAAAAAAAtm/////wAA//8AAP//AAD///////8AAP////8AAAAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ck62m"]
+resource_name = "kniife_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1///z18/789fP///1//v/9f/389fP+//1//v/+f/3//n3ym/1//f/+f/z//n/9//1//P/9fAAD/n/8//1//Pz18AAD/n4IZ/x//f/9f/z//X/9//x//P/+f/398xv8/fMb/f/+f/z8xi3RG6mqKeepqdEYxi4p5"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABQAHAAgACQAKAAsACQAMAAoADQAOAA8ADgANABAADgAQABEAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
+"material": SubResource("StandardMaterial3D_f8vgc"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAPZwAABU1QAA9nD//1TVAAAAAAAAVNX//wAAAAD//wAA9nAAAP//AAAAAAAA////////AAD//wtm//8AAP////8AAAAAVNX///////9U1f////8AAFTV//8AAP//VNUAAAAA////v/////////+///8AAP///78AAPZw////vwtm//////+/AAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7//////AAD//wtm////////C2b//wAA/////////////wAA9nD//yHlC2b//wAAIeULZv////8h5QAA9nAAACHlVNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7//v/+/qiqqKqoqqiqqKqoqqiqqKv//////////////////////////AAD/fwAA/38AAP9/AAD/f/9//7//f/+//3//v/9//7/JZeSyyWXkssll5LLJZeSy")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bjl44")
+
+[sub_resource type="Gradient" id="Gradient_efayc"]
+offsets = PackedFloat32Array(0, 0.0058708414, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.44941086, 0.13888544, 0.0627699, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_efayc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8suoi"]
+width = 250
+height = 250
+noise = SubResource("FastNoiseLite_efayc")
+color_ramp = SubResource("Gradient_efayc")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8suoi"]
+frequency = 0.0015
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rnnv8"]
+noise = SubResource("FastNoiseLite_8suoi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efayc"]
+albedo_color = Color(0.66656864, 0.6665687, 0.66656864, 1)
+albedo_texture = SubResource("NoiseTexture2D_8suoi")
+metallic = 1.0
+roughness = 0.62
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_rnnv8")
+
+[node name="kniife" type="Node3D" unique_id=1549836027]
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1676057896]
+transform = Transform3D(-0.21087909, 0, 0, 0, 0.8017566, 0, 0, 0, 0.10638726, 0, 0, 0)
+material_override = ExtResource("1_efayc")
+mesh = SubResource("ArrayMesh_hxvap")
+
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=770709621]
+transform = Transform3D(-0.16870327, 0, 0, 0, 1.0948639, 0, 0, 0, 0.009262029, 0, 1.729456, 0)
+mesh = SubResource("ArrayMesh_ck62m")
+surface_material_override/0 = SubResource("StandardMaterial3D_efayc")
