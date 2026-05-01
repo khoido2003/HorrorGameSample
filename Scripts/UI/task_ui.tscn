@@ -18,7 +18,7 @@ text = "Task:"
 [node name="Body" type="RichTextLabel" parent="." unique_id=1344603320]
 offset_left = 19.0
 offset_top = 41.0
-offset_right = 215.0
-offset_bottom = 135.0
+offset_right = 385.0
+offset_bottom = 155.0
 theme_override_font_sizes/normal_font_size = 20
 text = "Sample text for task"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqxlsmpb2rbik" path="res://Scripts/Player/Player.cs" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://x2oxnx5vxtot" path="res://Scripts/Player/FPCamera.cs" id="2_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://smn2213amslr" path="res://Assets/Sounds/walking-short.mp3" id="2_amgex"]
 [ext_resource type="Script" uid="uid://dodi427ffu63p" path="res://Scripts/Player/PlayerZoom.cs" id="2_e535i"]
 [ext_resource type="Script" uid="uid://bvbdrdjya7lnf" path="res://Scripts/Player/PlayerFlashlight.cs" id="2_h56sh"]
 [ext_resource type="Script" uid="uid://dtkc3xhw5jpmi" path="res://Scripts/Player/PlayerInteract.cs" id="3_ejydr"]
@@ -18,13 +19,15 @@ height = 4.5
 radius = 0.71191406
 height = 3.5463867
 
-[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlightController", "inventory", "visualHolder")]
+[node name="Player" type="CharacterBody3D" unique_id=1575378184 node_paths=PackedStringArray("collision", "flashlightController", "inventory", "visualHolder", "walkSound")]
 collision_layer = 2
 script = ExtResource("1_l8h54")
 collision = NodePath("CollisionShape3D")
 flashlightController = NodePath("FlashLight")
 inventory = NodePath("Inventory")
 visualHolder = NodePath("PlayerVisualHolder")
+walkSoundsList = Array[AudioStream]([ExtResource("2_amgex")])
+walkSound = NodePath("WalkSound")
 
 [node name="FlashLight" type="SpotLight3D" parent="." unique_id=1436872266 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14535594, 2.5736067, -0.57285815)
@@ -45,10 +48,11 @@ script = ExtResource("2_e535i")
 camera = NodePath("../Head/Camera3D")
 
 [node name="Head" type="Node3D" parent="." unique_id=1103191098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9976761, -0.80974275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9976761, -0.4568584)
 script = ExtResource("2_4ntmi")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1535387249]
+current = true
 
 [node name="PlayerInteract" type="RayCast3D" parent="Head" unique_id=1559137965 node_paths=PackedStringArray("crosshair", "player")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.012124658, -0.457663)
@@ -93,3 +97,8 @@ expand_mode = 1
 
 [node name="inventory_HUD" parent="." unique_id=742023706 node_paths=PackedStringArray("inventory") instance=ExtResource("9_tffgb")]
 inventory = NodePath("../Inventory")
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="." unique_id=68115877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.461825, 0)
+max_distance = 30.0
+bus = &"Sfx"

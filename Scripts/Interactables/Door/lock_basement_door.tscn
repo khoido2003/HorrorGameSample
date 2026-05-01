@@ -3,6 +3,8 @@
 [ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="1_dcck4"]
 [ext_resource type="Script" uid="uid://w6xu2yonqiv4" path="res://Scripts/Interactables/Door/Door.cs" id="1_m3n2o"]
 [ext_resource type="Material" uid="uid://ckav8lpiimpry" path="res://Assets/Materials/door_mat.tres" id="2_m3n2o"]
+[ext_resource type="AudioStream" uid="uid://i8h62d37wsw3" path="res://Assets/Sounds/door-open.mp3" id="4_omx5b"]
+[ext_resource type="AudioStream" uid="uid://d1v38yrecyexy" path="res://Assets/Sounds/door-close.mp3" id="5_xwxqv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4j6tw"]
 
@@ -50,11 +52,13 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6yci"]
 size = Vector3(6.360756, 2.0161133, 7.6428165)
 
-[node name="LockBasementDoor" type="Node3D" unique_id=2145122880 node_paths=PackedStringArray("animationPlayer")]
+[node name="LockBasementDoor" type="Node3D" unique_id=2145122880 node_paths=PackedStringArray("animationPlayer", "doorOpenSound", "doorCloseSound")]
 script = ExtResource("1_m3n2o")
 animationPlayer = NodePath("AnimationPlayer")
 isLocked = true
 lockId = 1
+doorOpenSound = NodePath("Hint/OpenSound")
+doorCloseSound = NodePath("Hint/CloseSound")
 
 [node name="Hint" type="Node3D" parent="." unique_id=919846693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9967508, 0, 0)
@@ -73,6 +77,18 @@ shape = SubResource("ConcavePolygonShape3D_ugmhy")
 transform = Transform3D(0.22667179, 0, 0, 0, 0.43839338, 0, 0, 0, 1, 5.6225142, 0.47459936, 0)
 material_override = ExtResource("2_m3n2o")
 mesh = SubResource("BoxMesh_m3n2o")
+
+[node name="OpenSound" type="AudioStreamPlayer3D" parent="Hint" unique_id=1405089906]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.728888, 0.52897906, 0.4222969)
+stream = ExtResource("4_omx5b")
+max_distance = 30.0
+bus = &"Sfx"
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="Hint" unique_id=2065377320]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.728888, 0.52897906, 0.4222969)
+stream = ExtResource("5_xwxqv")
+max_distance = 30.0
+bus = &"Sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=656632708]
 libraries/ = SubResource("AnimationLibrary_su2j8")

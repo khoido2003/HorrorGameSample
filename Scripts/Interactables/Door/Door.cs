@@ -18,6 +18,12 @@ public partial class Door : Node, IInteractable
     [Export]
     private LockId lockId = LockId.None;
 
+    [Export]
+    private AudioStreamPlayer3D doorOpenSound;
+
+    [Export]
+    private AudioStreamPlayer3D doorCloseSound;
+
     public override void _Ready()
     {
         if (AITrigger == null)
@@ -64,11 +70,13 @@ public partial class Door : Node, IInteractable
         {
             animationPlayer.Play("DoorOpen");
             isOpen = true;
+            doorOpenSound.Play();
         }
         else
         {
             animationPlayer.PlayBackwards("DoorOpen");
             isOpen = false;
+            doorCloseSound.Play();
         }
     }
 

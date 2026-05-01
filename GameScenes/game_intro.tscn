@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cl4v30byh5l10" path="res://Scenery/tree.tscn" id="4_ruj6j"]
 [ext_resource type="PackedScene" uid="uid://dot7hk4j7s0qg" path="res://Scenery/car_2.tscn" id="5_tjt7k"]
 [ext_resource type="PackedScene" uid="uid://d16it3edlkxob" path="res://GameScenes/transition.tscn" id="7_8r40u"]
+[ext_resource type="PackedScene" uid="uid://cdg1lbct5806j" path="res://Scenery/rain_fx.tscn" id="8_ruj6j"]
+[ext_resource type="Script" uid="uid://djgouvbu8202l" path="res://Scripts/UI/IntroUI.cs" id="9_e0332"]
+[ext_resource type="AudioStream" uid="uid://ck6atfg042mu4" path="res://Assets/Sounds/Intro.mp3" id="9_tjt7k"]
 
 [sub_resource type="Gradient" id="Gradient_14kwt"]
 offsets = PackedFloat32Array(0, 0.46179402, 0.99335545, 1)
@@ -119,7 +122,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_stg18"]
 resource_name = "cutscene"
-length = 9.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -127,7 +130,7 @@ tracks/0/path = NodePath("Car:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.7, 8.9),
+"times": PackedFloat32Array(0, 10.4, 19.066668),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.762, -59.553814), Vector3(0, 0.762, 29.969326), Vector3(0, 0.762, 63.09187)]
@@ -139,7 +142,7 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 3.2666667, 7.4333334),
+"times": PackedFloat32Array(0.033333335, 2.7666667, 5.9666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.76023656, -1.0982865, 0.006147886), Vector3(-0.76023656, -1.0982865, 0.006147886), Vector3(-0.76096356, -2.0402899, 0.006981317)]
@@ -163,6 +166,10 @@ environment = SubResource("Environment_pkso7")
 transform = Transform3D(1, 0, 0, 0, 0.18628402, 0.98249596, 0, -0.98249596, 0.18628402, 0, 16.538319, 4.587384)
 light_color = Color(0.26536065, 0.26536047, 0.2653605, 1)
 shadow_enabled = true
+
+[node name="RainFx" parent="." unique_id=449175245 instance=ExtResource("8_ruj6j")]
+transform = Transform3D(1, 0, 0, 0, 1.5178249, 0, 0, 0, 10.030636, 0, 4.7387753, 0)
+visible = false
 
 [node name="BG" type="MeshInstance3D" parent="." unique_id=2020021721]
 transform = Transform3D(-1.8255119, 0, -1.3627732, 0, 49.999992, 0, 99.98333, 0, -0.024881735, 20.055246, 4.9831257, 48.526455)
@@ -426,8 +433,53 @@ transform = Transform3D(0.11077514, 0, -0.99384546, 0, 1, 0, 0.99384546, 0, 0.11
 [node name="Car" parent="." unique_id=655726779 instance=ExtResource("5_tjt7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.762, -59.553814)
 
+[node name="Control" type="Control" parent="." unique_id=1576527021 node_paths=PackedStringArray("_studioLabel", "_gameTitle")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_e0332")
+_studioLabel = NodePath("Intro")
+_gameTitle = NodePath("GameName")
+
+[node name="Intro" type="RichTextLabel" parent="Control" unique_id=320118581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1035.0
+offset_bottom = -1014.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "A CayNhaLaVuon STUDIO GAME"
+
+[node name="GameName" type="RichTextLabel" parent="Control" unique_id=1841185003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 271.0
+offset_bottom = -405.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+text = "THE BUGLAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1250512001]
-transform = Transform3D(0.45888624, 0.6107784, -0.6452698, 0.00445518, 0.7246592, 0.68909293, 0.88848406, -0.31908992, 0.32981506, -10.039996, 11.985464, -10.473631)
+transform = Transform3D(0.45888624, 0.6107784, -0.6452698, 0.00445518, 0.72465914, 0.68909293, 0.88848406, -0.3190899, 0.32981506, -10.039996, 11.985464, -10.473631)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D" unique_id=851767473]
+transform = Transform3D(0.45888612, 0.0044551636, 0.8884838, 0.6107785, 0.72465926, -0.31908995, -0.6452698, 0.6890929, 0.329815, 0, 0, 0)
+stream = ExtResource("9_tjt7k")
+autoplay = true
+max_distance = 50.0
+bus = &"Sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1103269103]
 libraries/ = SubResource("AnimationLibrary_rimjq")

@@ -23,6 +23,12 @@ public partial class Player : CharacterBody3D
     [Export]
     private PlayerVisualHolder visualHolder;
 
+    [Export]
+    Godot.Collections.Array<AudioStream> walkSoundsList = new();
+
+    [Export]
+    private AudioStreamPlayer3D walkSound;
+
     private bool isDisabled = false;
 
     public PlayerVisualHolder VisualHolder
@@ -34,6 +40,8 @@ public partial class Player : CharacterBody3D
     {
         get { return inventory; }
     }
+
+    private RandomNumberGenerator rng = new();
 
     public override void _Ready()
     {
@@ -104,6 +112,7 @@ public partial class Player : CharacterBody3D
         Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
         if (direction != Vector3.Zero)
         {
+            PlayWalkSound();
             velocity.X = direction.X * speed;
             velocity.Z = direction.Z * speed;
         }
@@ -121,5 +130,15 @@ public partial class Player : CharacterBody3D
     {
         isDisabled = true;
         Input.MouseMode = Input.MouseModeEnum.Visible;
+    }
+
+    private void PlayWalkSound()
+    {
+        if (!walkSound.Playing)
+        {
+            walkSound.Stream = walkSoundsList[rng.RandiRange(0, walkSoundsList.Count - 1)];
+
+            walkSound.Play();
+        }
     }
 }

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cdg1lbct5806j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hm112"]
+emission_shape_scale = Vector3(1, 20, 1)
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+velocity_pivot = Vector3(0, -1, 0)
+spread = 5.0
+gravity = Vector3(0, -20, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_hm112"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0.009842522, 0.011859275), 0.0, 0.0, 0, 0, Vector2(0.253937, 0.023837209), 0.0, 0.0, 0, 0, Vector2(1, 0.0065237284), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm112"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.28259292, 0.42579484, 0.4713198, 1)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_24sob"]
+material = SubResource("StandardMaterial3D_hm112")
+shape = 0
+size = 1.114
+curve = SubResource("Curve_hm112")
+
+[node name="RainFx" type="Node3D" unique_id=449175245]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1121164904]
+amount = 300
+lifetime = 0.2
+randomness = 0.66
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_hm112")
+draw_pass_1 = SubResource("RibbonTrailMesh_24sob")

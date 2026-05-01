@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://w6xu2yonqiv4" path="res://Scripts/Interactables/Door/Door.cs" id="1_6u4om"]
 [ext_resource type="Material" uid="uid://ckav8lpiimpry" path="res://Assets/Materials/door_mat.tres" id="2_6u4om"]
 [ext_resource type="Material" uid="uid://bir6le3urrqpm" path="res://Assets/Materials/roof_mat.tres" id="2_qhxk6"]
+[ext_resource type="AudioStream" uid="uid://i8h62d37wsw3" path="res://Assets/Sounds/door-open.mp3" id="4_rqiwr"]
+[ext_resource type="AudioStream" uid="uid://d1v38yrecyexy" path="res://Assets/Sounds/door-close.mp3" id="5_04mx8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_kag12"]
 
@@ -70,10 +72,12 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_ou62y"]
 size = Vector3(1.1182251, 2.0161133, 2.326149)
 
-[node name="Door" type="Node3D" unique_id=530189763 node_paths=PackedStringArray("animationPlayer", "AITrigger")]
+[node name="Door" type="Node3D" unique_id=530189763 node_paths=PackedStringArray("animationPlayer", "AITrigger", "doorOpenSound", "doorCloseSound")]
 script = ExtResource("1_6u4om")
 animationPlayer = NodePath("AnimationPlayer")
 AITrigger = NodePath("AITrigger")
+doorOpenSound = NodePath("Hinge/OpenSound")
+doorCloseSound = NodePath("Hinge/CloseSound")
 
 [node name="Hinge" type="Node3D" parent="." unique_id=1999224483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7237097, 0, 0)
@@ -108,11 +112,23 @@ mesh = SubResource("BoxMesh_kag12")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Door/StaticBody3D" unique_id=1082719215]
 shape = SubResource("ConcavePolygonShape3D_qhxk6")
 
+[node name="OpenSound" type="AudioStreamPlayer3D" parent="Hinge" unique_id=2081601604]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7321371, 0.52897906, 0.4222969)
+stream = ExtResource("4_rqiwr")
+max_distance = 30.0
+bus = &"Sfx"
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="Hinge" unique_id=1660407350]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7321371, 0.52897906, 0.4222969)
+stream = ExtResource("5_04mx8")
+max_distance = 30.0
+bus = &"Sfx"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=615926785]
 libraries/ = SubResource("AnimationLibrary_6u4om")
 
 [node name="AITrigger" type="Area3D" parent="." unique_id=483599418]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AITrigger" unique_id=1097670525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044525146, -0.0031738281, -0.034488678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10105717, 0.25694394, -0.685351)
 shape = SubResource("BoxShape3D_ou62y")

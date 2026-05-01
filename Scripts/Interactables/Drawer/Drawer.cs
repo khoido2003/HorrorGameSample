@@ -11,6 +11,12 @@ public partial class Drawer : Node3D, IInteractable
 
     private bool isOpen = false;
 
+    [Export]
+    private AudioStreamPlayer3D doorOpenSound;
+
+    [Export]
+    private AudioStreamPlayer3D doorCloseSound;
+
     public void Interact(Player player)
     {
         GD.Print("Interact");
@@ -22,10 +28,12 @@ public partial class Drawer : Node3D, IInteractable
         if (isOpen)
         {
             animationPlayer.Play("close");
+            doorCloseSound.Play();
         }
         else
         {
             animationPlayer.Play("open");
+            doorOpenSound.Play();
         }
 
         isOpen = !isOpen;
